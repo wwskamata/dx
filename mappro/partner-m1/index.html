@@ -251,15 +251,23 @@
     font-size:13px;padding:6px 12px;border-radius:20px;
   }
 
-  .price-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:13.2px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);word-break:keep-all;overflow-wrap:break-word;line-height:1.6;}
-  .price-table th,.price-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;}
-  .price-table td:first-child,.price-table th:first-child{white-space:nowrap;}
-  .price-table th{background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;}
+  .price-table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:24px;font-size:12.6px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);word-break:break-word;overflow-wrap:break-word;line-height:1.6;}
+  .price-table th,.price-table td{padding:10px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;white-space:normal;}
+  .price-table th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;}
   .price-table td:first-child,.price-table th:first-child{color:var(--navy);font-weight:700;background:#eef1f6;}
   .price-table tr:last-child td{border-bottom:none;}
-  .price-table .yes-mark{color:#1a8754;font-weight:800;white-space:nowrap;}
-  .price-table .no-mark{color:var(--red);font-weight:800;white-space:nowrap;}
-  .price-table .free-mark{color:var(--teal);font-weight:700;white-space:nowrap;}
+  .price-table .mark-cell{white-space:nowrap;text-align:center;}
+  .price-table .yes-mark{color:#1a8754;font-weight:800;}
+  .price-table .no-mark{color:var(--red);font-weight:800;}
+  .price-table .free-mark{color:var(--teal);font-weight:700;}
+  .price-table col.c1{width:9%;}
+  .price-table col.c2{width:13%;}
+  .price-table col.c3{width:11%;}
+  .price-table col.c4{width:20%;}
+  .price-table col.c5{width:20%;}
+  .price-table col.c6{width:15%;}
+  .price-table col.c7{width:12%;}
+  @media(max-width:760px){.price-table{font-size:11.5px;} .price-table th,.price-table td{padding:8px 6px;}}
 
   /* Reference photos from source materials */
   .shot{border:1px solid var(--line);border-radius:12px;margin:14px 0 0;box-shadow:0 4px 14px rgba(11,31,69,.08);}
@@ -347,6 +355,7 @@
     安全確認や設備点検、技術継承といった現場業務のDXを支援します。上記の課題に対して、MapPenguin Proだからこそ
     ご提案できる価値が以下の6点です。
   </p>
+  <img src="/dx/assets/mappro-img/staff_avatars.jpg" alt="現場のあらゆる立場のスタッフ（自社・協力会社・新人・ベテラン・外国人スタッフ・管理者）が使うイメージ" style="max-width:100%;margin-bottom:20px;">
   <div class="grid g3">
     <div class="card"><div class="num">1</div><h3>アプリ・QR不要</h3><p>ワンタイムURLの発行・シェアだけで即座に利用可能。来訪者・従業員に専用アプリのインストールを求めません。</p></div>
     <div class="card"><div class="num">2</div><h3>11言語・自動翻訳</h3><p>外国人スタッフにも正確に情報を届ける多言語対応。</p></div>
@@ -519,18 +528,21 @@
   <h3 style="margin:30px 0 4px;font-size:16px;color:var(--navy);">費用項目別・売価設定ルール（計算例つき）</h3>
   <p class="sec-desc" style="margin-bottom:4px;">代理店様で販売いただく場合の売価設定と、各方式の対象可否・計算例をまとめてご案内します。掛け率・売価は一例です。</p>
   <table class="price-table">
+    <colgroup>
+      <col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7">
+    </colgroup>
     <tr>
       <th rowspan="2">区分</th><th rowspan="2">項目</th><th rowspan="2">オープン価格<br>（小売参考）</th>
-      <th colspan="2">①卸値割引方式</th><th rowspan="2">貴社粗利の例<br>（売価−WWS卸値）</th><th rowspan="2">②キックバック方式</th>
+      <th colspan="2">①卸値割引方式</th><th rowspan="2">貴社粗利の例<br>（売価−WWS卸値）</th><th rowspan="2">②キックバック<br>方式</th>
     </tr>
-    <tr><th>WWS卸値（貴社仕入額）</th><th>売価（貴社設定・エンドへの請求額）</th></tr>
-    <tr><td rowspan="3">A 初期費用</td><td>① SaaS費用</td><td>100,000円</td><td class="yes-mark">20〜30%OFFで卸（例：Standardプラン 70,000円〜80,000円）</td><td class="free-mark">オープン価格（サービス価格）通り　例：100,000円</td><td>20,000円〜30,000円</td><td class="yes-mark">○ 対象</td></tr>
-    <tr><td>② ディレクション費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="no-mark">× 対象外</td></tr>
-    <tr><td>③ カスタマイズ費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="no-mark">× 対象外</td></tr>
-    <tr><td rowspan="3">B 月額費用</td><td>① SaaSプラン月額</td><td>38,000円</td><td class="yes-mark">20〜30%OFFで卸（例：Standardプラン 26,600円〜30,400円）</td><td class="free-mark">オープン価格（サービス価格）通り　例：38,000円</td><td>7,600円〜11,400円</td><td class="yes-mark">○ 対象</td></tr>
-    <tr><td>② SaaSオプション月額</td><td>オプション料金表参照</td><td class="yes-mark">20〜30%OFFで卸</td><td class="free-mark">オープン価格（サービス価格）通り　※オプション料金表に準拠</td><td>－</td><td class="yes-mark">○ 対象</td></tr>
-    <tr><td>③ 運用代行・サポート支援費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="no-mark">× 対象外</td></tr>
-    <tr><td>C 従量課金</td><td>値引き対象外</td><td>－</td><td class="no-mark">実費据え置き（WWS卸値＝実費）</td><td class="free-mark">実費のまま（基本は小売価格）</td><td>－</td><td class="no-mark">× 対象外</td></tr>
+    <tr><th>WWS卸値<br>（貴社仕入額）</th><th>売価<br>（貴社設定・請求額）</th></tr>
+    <tr><td rowspan="3">A 初期費用</td><td>① SaaS費用</td><td>100,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：Standardプラン<br>70,000円〜80,000円）</td><td class="free-mark">オープン価格通り<br>例：100,000円</td><td>20,000円<br>〜30,000円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>② ディレクション費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td>③ カスタマイズ費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td rowspan="3">B 月額費用</td><td>① SaaSプラン月額</td><td>38,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：Standardプラン<br>26,600円〜30,400円）</td><td class="free-mark">オープン価格通り<br>例：38,000円</td><td>7,600円<br>〜11,400円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>② SaaSオプション月額</td><td>オプション料金表参照</td><td class="yes-mark">20〜30%OFF<br>で卸</td><td class="free-mark">オープン価格通り<br>※料金表に準拠</td><td>－</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>③ 運用代行・サポート支援費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td>C 従量課金</td><td>値引き対象外</td><td>－</td><td class="no-mark">実費据え置き<br>（WWS卸値＝実費）</td><td class="free-mark">実費のまま<br>（基本は小売価格）</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
   </table>
 
   <div class="note-box">
