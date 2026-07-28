@@ -251,8 +251,9 @@
     font-size:13px;padding:6px 12px;border-radius:20px;
   }
 
-  .price-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:13.2px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);}
+  .price-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:13.2px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);word-break:keep-all;overflow-wrap:break-word;line-height:1.6;}
   .price-table th,.price-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;}
+  .price-table td:first-child,.price-table th:first-child{white-space:nowrap;}
   .price-table th{background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;}
   .price-table td:first-child,.price-table th:first-child{color:var(--navy);font-weight:700;background:#eef1f6;}
   .price-table tr:last-child td{border-bottom:none;}
@@ -283,9 +284,8 @@
     </div>
     <nav class="pagelinks">
       <a href="#issues">課題</a>
-      <a href="#reasons">選ばれる理由</a>
-      <a href="#patterns">導入パターン</a>
-      <a href="#scenes">利用シーン</a>
+      <a href="#about">選ばれる理由</a>
+      <a href="#patterns">導入パターン・利用シーン</a>
       <a href="#cost">費用効果</a>
       <a href="#pricing">卸価格</a>
       <a href="#flow">導入の流れ</a>
@@ -335,40 +335,32 @@
 </section>
 
 <!-- 選ばれる理由 -->
-<section id="reasons" class="alt">
-  <div class="inner">
-    <span class="eyebrow">Why MapPenguin Pro</span>
-    <h2 class="sec-title">選ばれる6つの理由</h2>
-    <div class="gradbar"></div>
-    <p class="sec-desc">上記の課題に対して、MapPenguin Proだからこそご提案できる価値です。</p>
-    <img src="/dx/assets/mappro-img/reasons.jpg" alt="MapPenguin Proが選ばれる理由" class="shot">
-  </div>
-</section>
-
-<!-- MapPenguinとは -->
+<!-- MapPenguinとは／選ばれる理由 -->
 <section id="about">
   <div class="section-head">
     <div>
-      <span class="eyebrow">About MapPenguin Pro</span>
-      <h2 class="sec-title">MapPenguin Proとは</h2>
+      <span class="eyebrow">About &amp; Why MapPenguin Pro</span>
+      <h2 class="sec-title">MapPenguin Proとは／選ばれる6つの理由</h2>
     </div>
   </div>
   <div class="gradbar"></div>
   <p class="sec-desc">
     MapPenguin Proは、施設・観光案内向けの「MapPenguin」の現場業務向けエディションです。業務システムとAPI連携し、
     位置情報と社内データを統合。拠点・設備・作業員の状態を地図上でリアルタイムに可視化し、工場・製造現場の
-    安全確認や設備点検、技術継承といった現場業務のDXを支援します。紙の図面・台帳を、スマートフォン・タブレットで
-    いつでも最新の状態に更新できるかたちに置き換えます。
+    安全確認や設備点検、技術継承といった現場業務のDXを支援します。上記の課題に対して、MapPenguin Proだからこそ
+    ご提案できる価値が以下の6点です。
   </p>
-  <div class="grid g4">
-    <div class="card"><div class="num">1</div><h3>アプリ不要</h3><p>URL・QRコードから即アクセス。来訪者・従業員に専用アプリのインストールを求めません。</p></div>
-    <div class="card"><div class="num">2</div><h3>経路・スポット検索</h3><p>現在地から目的地までのルート案内、フロア間移動、バリアフリー経路にも対応。</p></div>
-    <div class="card"><div class="num">3</div><h3>即時更新</h3><p>レイアウト変更やテナント変更があっても、管理画面から担当者がすぐに反映可能。</p></div>
-    <div class="card"><div class="num">4</div><h3>外部データ連携</h3><p>既存DB・CMSとのAPI連携、GoogleMapsPlatformデータの取り込みにも対応。</p></div>
+  <div class="grid g3">
+    <div class="card"><div class="num">1</div><h3>アプリ・QR不要</h3><p>ワンタイムURLの発行・シェアだけで即座に利用可能。来訪者・従業員に専用アプリのインストールを求めません。</p></div>
+    <div class="card"><div class="num">2</div><h3>11言語・自動翻訳</h3><p>外国人スタッフにも正確に情報を届ける多言語対応。</p></div>
+    <div class="card"><div class="num">3</div><h3>業界実績100社以上</h3><p>大手企業での導入実績が証明する安定したプラットフォーム。</p></div>
+    <div class="card"><div class="num">4</div><h3>リアルタイム誘導・即時更新</h3><p>通行止めや緊急時の避難誘導ルートを即座にマップへ反映。レイアウト変更やテナント変更があっても、管理画面から担当者がすぐに反映できます。</p></div>
+    <div class="card"><div class="num">5</div><h3>拡張性（API／IoT／SSO）</h3><p>既存の設備管理台帳・IoT機器・GoogleMapsPlatformデータともシームレスに連携。</p></div>
+    <div class="card"><div class="num">6</div><h3>完全伴走サポート</h3><p>導入から運用まで、専任担当者がしっかりとサポートします。</p></div>
   </div>
 </section>
 
-<!-- 導入パターン -->
+<!-- 導入パターン・利用シーン -->
 <section id="patterns" class="alt">
   <div class="inner">
     <span class="eyebrow">Introduction Patterns</span>
@@ -398,23 +390,18 @@
       </div>
     </div>
     <div class="banner">紙の掲示板1枚からでも、複数拠点の統合基盤としても — 提案の入口を選べます。</div>
-  </div>
-</section>
 
-<!-- 利用シーン -->
-<section id="scenes">
-  <span class="eyebrow">Use Cases in Factories</span>
-  <h2 class="sec-title">工場の各利用シーン</h2>
-  <div class="gradbar"></div>
-  <p class="sec-desc">工場向けMapPenguin Proご提案資料（2026年7月版）をもとにした、現場ならではの5つの活用シーンです。</p>
-  <img src="/dx/assets/mappro-img/overview5.jpg" alt="工場向け5つの活用シーンの全体像" class="shot">
-  <div class="grid g3">
-    <div class="card"><span class="tag">1</span><img src="/dx/assets/mappro-img/scene1_safety.jpg" alt="安全・リスク管理（ヒヤリハット）イメージ" class="shot sm"><h3>安全・リスク管理（ヒヤリハット）</h3><p>現場でヒヤリハットが発生した際、その場所のフロアマップを長押しして即時にスマホからピン登録。写真を紐づけてリアル共有し、安全衛生委員会が危険ピンをもとに巡回ルートを作成できます。</p></div>
-    <div class="card"><span class="tag">2</span><img src="/dx/assets/mappro-img/scene2_evac.jpg" alt="通行規制・避難経路・防災イメージ" class="shot sm"><h3>通行規制・避難経路・防災</h3><p>設備改修や床面補修工事に合わせて通路を「通行不可」に設定し、規制エリアを自動で避けた迂回ルートを描画。ハザード情報や工場独自の避難ルートもマップ上に一元表示できます。</p></div>
-    <div class="card"><span class="tag">3</span><img src="/dx/assets/mappro-img/scene3_training.jpg" alt="教育・技術継承イメージ" class="shot sm"><h3>教育・技術継承</h3><p>設備のピンをタップすると操作手順動画がその場で再生。外国人労働者も視覚的にルールを習得でき、ベテランの点検・対応手順を撮影・マッピングしてノウハウの散逸を防ぎます。</p></div>
-    <div class="card"><span class="tag">4</span><img src="/dx/assets/mappro-img/scene4_pest.jpg" alt="衛生管理（防虫・防鼠）イメージ" class="shot sm"><h3>衛生管理（防虫・防鼠）</h3><p>防鼠・防虫トラップの設置位置をアイコン別・カラー別にマッピングし、回収記録や異常値検知データと連動。捕獲件数の多いゾーンを色分けし、重点対策箇所を共有できます。</p></div>
-    <div class="card"><span class="tag">5</span><img src="/dx/assets/mappro-img/scene5_iot.jpg" alt="資産管理・IoT／カメラ連携イメージ" class="shot sm"><h3>資産管理・IoT／カメラ連携</h3><p>マップ上の監視カメラマークからライブ・静止画を確認。温度・湿度等のIoTセンサーをAPI接続して規定値超えを即座に検知し、ビーコン・GPSトラッカーで重機・資材の位置をリアルタイム描画します。</p></div>
-    <div class="card"><span class="tag">6</span><h3>セキュリティ・多言語対応</h3><p>2要素認証・Azure AD SSO連携（カスタム対応）・社内LAN限定のIP制限など堅牢なアクセス制御と、11ヶ国語の多言語表示を両立。機密図面の管理と外国人材への安全情報伝達を同時に実現します。</p></div>
+    <h3 style="margin:34px 0 4px;font-size:16px;color:var(--navy);">工場の各利用シーン</h3>
+    <p class="sec-desc" style="margin-bottom:4px;">工場向けMapPenguin Proご提案資料（2026年7月版）をもとにした、現場ならではの5つの活用シーンです。</p>
+    <img src="/dx/assets/mappro-img/overview5.jpg" alt="工場向け5つの活用シーンの全体像" class="shot">
+    <div class="grid g3" style="margin-top:22px;">
+      <div class="card"><span class="tag">1</span><img src="/dx/assets/mappro-img/scene1_safety.jpg" alt="安全・リスク管理（ヒヤリハット）イメージ" class="shot sm"><h3>安全・リスク管理（ヒヤリハット）</h3><p>現場でヒヤリハットが発生した際、その場所のフロアマップを長押しして即時にスマホからピン登録。写真を紐づけてリアル共有し、安全衛生委員会が危険ピンをもとに巡回ルートを作成できます。</p></div>
+      <div class="card"><span class="tag">2</span><img src="/dx/assets/mappro-img/scene2_evac.jpg" alt="通行規制・避難経路・防災イメージ" class="shot sm"><h3>通行規制・避難経路・防災</h3><p>設備改修や床面補修工事に合わせて通路を「通行不可」に設定し、規制エリアを自動で避けた迂回ルートを描画。ハザード情報や工場独自の避難ルートもマップ上に一元表示できます。</p></div>
+      <div class="card"><span class="tag">3</span><img src="/dx/assets/mappro-img/scene3_training.jpg" alt="教育・技術継承イメージ" class="shot sm"><h3>教育・技術継承</h3><p>設備のピンをタップすると操作手順動画がその場で再生。外国人労働者も視覚的にルールを習得でき、ベテランの点検・対応手順を撮影・マッピングしてノウハウの散逸を防ぎます。</p></div>
+      <div class="card"><span class="tag">4</span><img src="/dx/assets/mappro-img/scene4_pest.jpg" alt="衛生管理（防虫・防鼠）イメージ" class="shot sm"><h3>衛生管理（防虫・防鼠）</h3><p>防鼠・防虫トラップの設置位置をアイコン別・カラー別にマッピングし、回収記録や異常値検知データと連動。捕獲件数の多いゾーンを色分けし、重点対策箇所を共有できます。</p></div>
+      <div class="card"><span class="tag">5</span><img src="/dx/assets/mappro-img/scene5_iot.jpg" alt="資産管理・IoT／カメラ連携イメージ" class="shot sm"><h3>資産管理・IoT／カメラ連携</h3><p>マップ上の監視カメラマークからライブ・静止画を確認。温度・湿度等のIoTセンサーをAPI接続して規定値超えを即座に検知し、ビーコン・GPSトラッカーで重機・資材の位置をリアルタイム描画します。</p></div>
+      <div class="card"><span class="tag">6</span><h3>セキュリティ・多言語対応</h3><p>2要素認証・Azure AD SSO連携（カスタム対応）・社内LAN限定のIP制限など堅牢なアクセス制御と、11ヶ国語の多言語表示を両立。機密図面の管理と外国人材への安全情報伝達を同時に実現します。</p></div>
+    </div>
   </div>
 </section>
 
@@ -517,11 +504,11 @@
     </tr>
     <tr><th>WWS卸値（貴社仕入額）</th><th>売価（貴社設定・エンドへの請求額）</th></tr>
     <tr><td rowspan="3">A 初期費用</td><td>① SaaS費用</td><td class="yes-mark">20〜30%OFFで卸（例：Standardプラン 70,000円〜80,000円）</td><td class="free-mark">オープン価格（サービス価格）通り　例：100,000円</td><td class="yes-mark">○ 対象</td></tr>
-    <tr><td>② ディレクション費用</td><td class="no-mark">－（卸値の対象外）→実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
-    <tr><td>③ カスタマイズ費用</td><td class="no-mark">－（卸値の対象外）→実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td>② ディレクション費用</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td>③ カスタマイズ費用</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
     <tr><td rowspan="3">B 月額費用</td><td>① SaaSプラン月額</td><td class="yes-mark">20〜30%OFFで卸（例：Standardプラン 26,600円〜30,400円）</td><td class="free-mark">オープン価格（サービス価格）通り　例：38,000円</td><td class="yes-mark">○ 対象</td></tr>
     <tr><td>② SaaSオプション月額</td><td class="yes-mark">20〜30%OFFで卸</td><td class="free-mark">オープン価格（サービス価格）通り　※オプション料金表に準拠</td><td class="yes-mark">○ 対象</td></tr>
-    <tr><td>③ 運用代行・サポート支援費用</td><td class="no-mark">－（卸値の対象外）→実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td>③ 運用代行・サポート支援費用</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td class="no-mark">× 対象外</td></tr>
     <tr><td>C 従量課金</td><td>値引き対象外</td><td class="no-mark">実費据え置き（WWS卸値＝実費）</td><td class="free-mark">実費のまま（基本は小売価格）</td><td class="no-mark">× 対象外</td></tr>
   </table>
 
