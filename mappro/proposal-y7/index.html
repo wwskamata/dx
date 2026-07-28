@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デジタルフロアマップ「MapPenguin Pro」導入ご提案 | 工場・製造現場向け</title>
+<script>
+  window.PW_GATE_CONFIG = {
+    hash: "7612f0cf3c6c56daef36c1866a0babefadbe33f9baaf6d5f662d409051ec1128",
+    label: "MapPenguin Pro ご提案資料"
+  };
+</script>
+<script src="/dx/assets/password-gate.js"></script>
+<style>
+  :root{
+    --navy:#0B1F45;
+    --navy-deep:#15294C;
+    --teal:#22455B;
+    --red:#C00000;
+    --grad1:#03699A;
+    --grad2:#EF9F02;
+    --grad3:#15294C;
+    --card:#F4F4F4;
+    --ink:#1c2430;
+    --sub:#5b6472;
+    --line:#e3e6ea;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.8;
+    font-size:15.5px;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .gradbar{height:5px;width:64px;background:linear-gradient(90deg,var(--grad1),var(--grad2),var(--grad3));border-radius:3px;margin:10px 0 22px;}
+
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
+  .nav-wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);}
+  .brand .logo-pen{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--grad1),var(--grad3));display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;}
+  .brand .name{font-size:17px;letter-spacing:.02em;}
+  .brand .badge{background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px;letter-spacing:.05em;}
+  nav.pagelinks{display:flex;flex-wrap:wrap;gap:2px;}
+  nav.pagelinks a{font-size:12px;color:var(--sub);text-decoration:none;padding:8px 8px;border-radius:6px;white-space:nowrap;}
+  nav.pagelinks a:hover{background:var(--card);color:var(--navy);}
+
+  .hero{background:radial-gradient(1200px 480px at 15% -10%, #12315e 0%, var(--navy) 45%, var(--navy-deep) 100%);color:#fff;padding:64px 20px 56px;}
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .kicker{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:20px;letter-spacing:.04em;margin-bottom:18px;}
+  .hero h1{font-size:clamp(26px,4vw,38px);line-height:1.5;margin:0 0 14px;font-weight:800;}
+  .hero h1 .mark{color:#FFB84D;}
+  .hero p.lead{font-size:15.5px;color:#d7dfef;max-width:640px;margin:0 0 26px;}
+  .hero-grad{height:6px;width:120px;border-radius:4px;background:linear-gradient(90deg,var(--grad1),var(--grad2),#fff);margin-bottom:26px;}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:14px;}
+  .hstat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 18px;min-width:150px;}
+  .hstat b{display:block;font-size:20px;color:#fff;}
+  .hstat span{font-size:12px;color:#b9c4dc;}
+
+  section{padding:56px 20px;max-width:var(--maxw);margin:0 auto;}
+  section.alt{background:var(--card);max-width:none;}
+  section.alt .inner{max-width:var(--maxw);margin:0 auto;padding:56px 20px;}
+  .eyebrow{font-size:12.5px;font-weight:700;color:var(--red);letter-spacing:.06em;text-transform:uppercase;}
+  h2.sec-title{font-size:23px;color:var(--navy);margin:6px 0 0;font-weight:800;}
+  p.sec-desc{color:var(--sub);max-width:720px;margin:0 0 8px;}
+
+  .grid{display:grid;gap:16px;margin-top:26px;}
+  .grid.g2{grid-template-columns:repeat(2,1fr);}
+  .grid.g3{grid-template-columns:repeat(3,1fr);}
+  .grid.g5{grid-template-columns:repeat(5,1fr);}
+  @media(max-width:860px){
+    .grid.g2,.grid.g3,.grid.g5{grid-template-columns:1fr;}
+    nav.pagelinks{display:none;}
+  }
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 22px;}
+  section.alt .card{background:#fff;}
+  .card .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;font-size:13px;margin-bottom:12px;}
+  .card h3{margin:0 0 8px;font-size:15.5px;color:var(--navy);font-weight:700;}
+  .card p{margin:0;color:var(--sub);font-size:13.8px;}
+  .card ol{margin:8px 0 0;padding-left:18px;color:var(--sub);font-size:13.2px;}
+  .card ol li{margin-bottom:6px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:#e7edf1;padding:3px 9px;border-radius:20px;margin-bottom:10px;}
+  .tag.red{color:var(--red);background:#fbe7e7;}
+  .callout{display:inline-block;background:var(--red);color:#fff;font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:20px;margin-left:10px;vertical-align:middle;}
+
+  .flow{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
+  .flow .step{flex:1 1 160px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;}
+  .flow .step .stepno{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px;}
+  .flow .step h4{margin:0 0 6px;font-size:14px;color:var(--navy);}
+  .flow .step p{margin:0;font-size:12.8px;color:var(--sub);}
+  .flow-arrow{align-self:center;color:#c7cfdb;font-size:18px;display:flex;align-items:center;}
+  @media(max-width:860px){.flow-arrow{display:none;}}
+
+  .price-box{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;border-radius:16px;padding:28px 26px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;margin-top:26px;}
+  .price-box .amount{font-size:30px;font-weight:800;}
+  .price-box .amount span{font-size:14px;font-weight:500;color:#c9d4ea;}
+  .price-box .note{font-size:12.5px;color:#c9d4ea;max-width:420px;}
+
+  .benefit-list{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;}
+  .benefit-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.8px;color:var(--ink);}
+  .benefit-list li:before{content:"";width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--grad1),var(--grad2));margin-top:7px;flex:none;}
+
+  .note-box{border:1px dashed #c7cfdb;background:#fbfbfc;border-radius:10px;padding:14px 16px;font-size:12.3px;color:var(--sub);margin-top:20px;}
+
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .chip{font-size:12px;color:var(--navy);background:#eef1f6;border:1px solid var(--line);padding:6px 12px;border-radius:20px;}
+
+  .banner{background:var(--navy);color:#fff;text-align:center;border-radius:14px;padding:18px 20px;margin-top:30px;font-weight:700;font-size:14.5px;letter-spacing:.01em;}
+
+  .price-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);}
+  .price-table th,.price-table td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;}
+  .price-table th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;}
+  .price-table td:first-child,.price-table th:first-child{color:var(--navy);font-weight:700;background:#eef1f6;}
+  .price-table tr:last-child td{border-bottom:none;}
+  .price-table .yes-mark{color:#1a8754;font-weight:800;white-space:nowrap;}
+  .price-table .center{text-align:center;}
+
+  .cta{background:linear-gradient(120deg,var(--navy) 0%, #123765 60%, var(--grad1) 130%);color:#fff;padding:56px 20px;}
+  .cta-inner{max-width:var(--maxw);margin:0 auto;text-align:center;}
+  .cta h2{font-size:24px;margin:0 0 12px;font-weight:800;}
+  .cta p{color:#d7dfef;margin:0 0 26px;}
+  .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:700;font-size:13.8px;text-decoration:none;}
+  .btn.primary{background:#fff;color:var(--navy);}
+  .btn.ghost{border:1px solid rgba(255,255,255,.5);color:#fff;}
+
+  footer{background:var(--navy-deep);color:#9fb0cf;font-size:11.5px;text-align:center;padding:26px 20px;}
+  footer a{color:#c9d4ea;text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-wrap">
+    <div class="brand">
+      <div class="logo-pen">MP</div>
+      <span class="name">MapPenguin Pro<span class="badge">ご提案</span></span>
+    </div>
+    <nav class="pagelinks">
+      <a href="#issues">課題</a>
+      <a href="#scenes">活用シーン</a>
+      <a href="#features">機能・効果</a>
+      <a href="#permission">権限設計</a>
+      <a href="#security">セキュリティ</a>
+      <a href="#cases">導入実績</a>
+      <a href="#price">費用・流れ</a>
+      <a href="#demo">デモ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">工場・製造現場向け デジタルフロアマップ ご提案</span>
+    <h1>デジタルマップで、<span class="mark">動き出す現場。</span><br>「人・安全・教育・情報」をまとめて実現</h1>
+    <div class="hero-grad"></div>
+    <p class="lead">
+      ヒヤリハット・通行規制・避難経路・教育、衛生管理、資産管理まで。自社独自のデジタルフロアマップ「MapPenguin Pro」上に統合し、
+      現場の「探しにくさ」「見えにくさ」「伝えにくさ」を解消します。
+    </p>
+    <div class="hero-stats">
+      <div class="hstat"><b>初期 100,000円</b><span>フロアマップライセンス設定・税抜</span></div>
+      <div class="hstat"><b>月額 48,000円〜</b><span>Proプラン目安（150スポット）・税抜</span></div>
+      <div class="hstat"><b>11ヶ国語</b><span>外国人労働者にも対応</span></div>
+      <div class="hstat"><b>最短1ヶ月</b><span>テスト運用の開始が可能</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 課題 -->
+<section id="issues">
+  <span class="eyebrow">Challenges</span>
+  <h2 class="sec-title">こんな課題、ございませんか？</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">工場の現場に潜む「情報の見えにくさ」が、安全・効率・技術継承の障壁になっていませんか。想定されるすべての課題をMapPenguin Proが解決します。</p>
+  <div class="grid g3">
+    <div class="card"><h3>ヒヤリハット活動の形骸化</h3><p>紙やExcelベースの運用で、どの場所で何が起きたかを直感的に共有・蓄積できない。</p></div>
+    <div class="card"><h3>一時通行規制の周知遅延</h3><p>工事やレイアウト変更に伴う迂回路情報が、現場にリアルタイムに伝わらない。</p></div>
+    <div class="card"><h3>避難情報の即時把握不足</h3><p>災害時のハザード情報や避難動線が、個別のファイルや紙図面の中に閉ざされている。</p></div>
+    <div class="card"><h3>教育訓練・マニュアルの壁</h3><p>新人や外国人労働者へ設備手順や危険箇所を伝えるのに、膨大な時間と教育コストがかかる。</p></div>
+    <div class="card"><h3>防虫・防鼠等の衛生管理</h3><p>設置箇所と捕獲状況を、デジタル図面上でシームレスに重ね合わせて把握できていない。</p></div>
+    <div class="card"><h3>現場設備・カメラ等の孤立化</h3><p>定点監視カメラ、センサー情報、重要な現場資機材の「位置」が一元化されていない。</p></div>
+  </div>
+</section>
+
+<!-- 活用シーン -->
+<section id="scenes" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Use Cases</span>
+    <h2 class="sec-title">活用シーン</h2>
+    <div class="gradbar"></div>
+    <p class="sec-desc">現場の危険箇所や事象を、場所とビジュアルでシームレスに重ねて即座に共有します。</p>
+
+    <div class="card" style="margin-top:24px;">
+      <span class="tag">活用シーン①</span>
+      <h3>安全・リスク管理（ヒヤリハット）</h3>
+      <ol>
+        <li><b>地図ベースの直観投稿</b>：現場でヒヤリハットが発生した際、その場所のフロアマップを長押しし、即時にスマホからマッピング登録できます。</li>
+        <li><b>画像添付でのリアル共有</b>：テキストだけの報告書と異なり、詳細カードとして現場写真をピンに紐づけて表示します。</li>
+        <li><b>定着性の高いパトロール</b>：安全衛生委員会メンバーや責任者が、マップ上の危険ピンを元に実地確認・巡回ルートを作成できます。</li>
+      </ol>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <span class="tag">活用シーン②</span>
+      <h3>通行規制・避難経路・防災</h3>
+      <ol>
+        <li><b>一時通行止め・規制表示</b>：設備改修や床面補修工事などに合わせ、特定の通路を「通行不可」ステータスに設定できます。</li>
+        <li><b>迂回路の自動・手動ルート描画</b>：規制エリアを自動で避けた迂回ルート案内ラインを、マップ上に重ねて描画します。</li>
+        <li><b>災害時避難動線連携</b>：国土地理院等の公開ハザード情報や、工場独自の非常避難ルートをマップ上に一元表示します。</li>
+      </ol>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <span class="tag">活用シーン③</span>
+      <h3>教育・技術継承</h3>
+      <ol>
+        <li><b>設備設置場所への動画紐付け</b>：特定の機械・充填機・化学装置のピンをタップすると、操作手順動画がその場で再生されます。</li>
+        <li><b>新人・外国人スタッフの自律学習</b>：危険物取扱箇所や保護具着用エリアに動画解説を紐付け、言葉が通じなくても視覚的に正しいルールを習得できます。</li>
+        <li><b>ノウハウの散逸防止</b>：ベテランの定常点検手順やトラブル対応を撮影・マッピングし、現場全体の技術レベル標準化に貢献します。</li>
+      </ol>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <span class="tag">活用シーン④</span>
+      <h3>衛生管理（防虫・防鼠）</h3>
+      <ol>
+        <li><b>トラップ設置箇所の完全マッピング</b>：防鼠用・防虫用のトラップや捕獲器具の配置位置を、アイコン別・カラー別にマッピングします。</li>
+        <li><b>管理シート・回収記録との連動</b>：各回収器具のピン詳細画面から、点検履歴や異常値検知データの入力シートにシームレスにリンクします。</li>
+        <li><b>注意ポイントの明確化</b>：過去に捕獲件数の多かった危険ゾーンを色付きで表示し、重点対策箇所の共有を強化します。</li>
+      </ol>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <span class="tag">活用シーン⑤</span>
+      <h3>資産管理・IoT／カメラ連携</h3>
+      <ol>
+        <li><b>監視カメラ（ライブ・静止画）連携</b>：マップ内に配置したカメラマークをタップすると、リアルタイムの現場カメラ映像や画像を表示します。</li>
+        <li><b>IoT各種センサー表示（温度・湿度等）</b>：タンクの温度・内圧センサー情報をAPI接続し、規定値超えのアラートをマップ上で即座に確認できます。</li>
+        <li><b>重要資産・車両・フォークリフト追跡</b>：SORACOM等のビーコン・GPSトラッカーを取り付け、現在位置を工場マップにリアルタイム描画します。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 機能・用途・効果 -->
+<section id="features">
+  <span class="eyebrow">Features</span>
+  <h2 class="sec-title">想定される機能・用途・効果</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">基本機能から各種オプション・連携ソリューションまで、理想のインドアマップを実現します。</p>
+  <table class="price-table">
+    <tr><th>機能区分</th><th>提供機能・仕様</th><th>期待される効果・活用価値</th></tr>
+    <tr><td rowspan="4">標準機能</td><td>複数階層（フロア）切替機能</td><td>入り組んだ多層階プラントの確認をワンタップで直感的に把握。</td></tr>
+    <tr><td>ID/PASS限定公開＋2要素認証</td><td>社外秘図面や機密データを強固なアクセス制限で管理。</td></tr>
+    <tr><td>スポット写真／動画URL連携</td><td>現場の設備マニュアル確認・点検作業を標準化。</td></tr>
+    <tr><td>11ヵ国語対応（多言語表示）</td><td>外国人労働者・協力会社への安全情報伝達を一瞬で。</td></tr>
+    <tr><td rowspan="3">オプション</td><td>フロア内 最短・最適経路案内</td><td>広大な構内での移動効率を向上させ、新人の迷いをゼロに。</td></tr>
+    <tr><td>災害時避難動線連携</td><td>非常時の緊急避難コースを視覚的に明示。</td></tr>
+    <tr><td>Google機械翻訳連携</td><td>登録情報を自動翻訳し、データ作成工数を削減。</td></tr>
+    <tr><td rowspan="3">外部・IoT連携</td><td>定点監視カメラ連携（ライブ／静止画）</td><td>管理事務所から現場状況をリアルタイム確認。</td></tr>
+    <tr><td>IoT各種センサー表示（温度／湿度等）</td><td>規定値超えのアラートを即座に確認。</td></tr>
+    <tr><td>重要資産・車両トラッキング連携</td><td>重機・フォークリフト・資材管理と接触事故防止。</td></tr>
+  </table>
+</section>
+
+<!-- 想定利用者と権限例 -->
+<section id="permission" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Access Control</span>
+    <h2 class="sec-title">想定利用者と機能権限例</h2>
+    <div class="gradbar"></div>
+    <p class="sec-desc">アカウント単位でセキュアにアクセス制御を施す権限設計です。協力会社と自社社員のアクセスエリア制限も完全に分離できます。</p>
+    <table class="price-table">
+      <tr><th>利用区分</th><th>地図閲覧</th><th>ヒヤリハット</th><th>マニュアル動画</th><th>カメラ／IoT確認</th><th>スポット編集</th></tr>
+      <tr><td>製造現場担当者（自社）</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">－</td></tr>
+      <tr><td>各部門責任者</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">自部門のみ</td><td class="center yes-mark">○</td></tr>
+      <tr><td>品質管理・安全衛生担当</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">安全関連のみ</td><td class="center yes-mark">○</td></tr>
+      <tr><td>人事総務（教育担当）</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center">教育のみ</td></tr>
+      <tr><td>物流・協力会社スタッフ</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center">－</td><td class="center">－</td><td class="center">限定エリア</td></tr>
+      <tr><td>新人・ベテラン</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center">－</td></tr>
+      <tr><td>海外スタッフ</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center">多言語表示</td></tr>
+      <tr><td>システム管理者（DX推進部）</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">全体</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- セキュリティ -->
+<section id="security">
+  <span class="eyebrow">Security &amp; Language</span>
+  <h2 class="sec-title">セキュリティ・多言語対応</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">セキュアなアクセス制御と11ヵ国語対応により、グローバルな安全運用を両立します。</p>
+  <div class="grid g2">
+    <div class="card"><h3>堅牢なアクセス制御機能</h3><p>2要素認証（2FA）標準対応、Azure AD SSO連携（カスタム対応）、社内LAN限定のネットワーク・IP制限など、機密情報に応じた通信制御を設定できます。</p></div>
+    <div class="card"><h3>11ヵ国語に対応する多言語機能</h3><p>英語・中国語（簡／繁）・韓国語・タイ語・ベトナム語・インドネシア語等に標準対応。CSV一括翻訳データ登録で、スポット名・警告表示の翻訳を一瞬で反映できます。</p></div>
+  </div>
+</section>
+
+<!-- 導入実績 -->
+<section id="cases" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Reference</span>
+    <h2 class="sec-title">導入実績</h2>
+    <div class="gradbar"></div>
+    <p class="sec-desc">製造・物流・商業施設・自治体など、業種を問わず導入が拡大しています。工場・製造現場での導入実績もございます。</p>
+    <div class="grid g3">
+      <div class="card"><span class="tag">工場・製造業</span><h3>AGC株式会社</h3><p>工場内の設備検索・保守業務の効率化にMapPenguin Proを活用。</p></div>
+      <div class="card"><span class="tag">工場・製造業</span><h3>ハルナグループ（群馬／飲料製造）</h3><p>工場内の設備・作業動線の可視化に活用。</p></div>
+      <div class="card"><span class="tag">インフラ資産管理</span><h3>Osaka Metro</h3><p>全路線駅構内の資産情報をマップで一元管理。</p></div>
+      <div class="card"><span class="tag">フロアマップ導入事例</span><h3>ルスツリゾート デジタルホテルマップ</h3><p>加森観光株式会社様。リゾート施設内2つのホテルのフロアマップに採用し、多言語対応でスムーズに案内。</p></div>
+      <div class="card"><span class="tag">キャンペーン活用</span><h3>SUNTORY</h3><p>一般向けキャンペーンでの展開店舗可視化にデジタルマップを活用。</p></div>
+      <div class="card"><span class="tag">自治体・観光案内</span><h3>岡山県／大分市</h3><p>観光・案内向けデジタルマップとしての活用実績。</p></div>
+    </div>
+    <div class="note-box">※各社の実績は弊社ご提案資料・導入実績資料に掲載の実名事例です。詳細な活用内容が必要な場合は、個別にご紹介します。</div>
+  </div>
+</section>
+
+<!-- 費用・スケジュール -->
+<section id="price">
+  <span class="eyebrow">Cost &amp; Schedule</span>
+  <h2 class="sec-title">費用シミュレーション＆導入スケジュール</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">初期費用＋月額料金のわかりやすい料金体系と、スピーディーな立ち上げステップです。</p>
+
+  <div class="price-box">
+    <div>
+      <div class="amount">初期 100,000円<span>＋月額 48,000円〜（Proプラン目安・税抜）</span></div>
+      <div class="note">フロアマップライセンス設定費（初期）と、150スポット／階層無料のProプラン月額費用です。経路案内オプションは月額20,000円〜。</div>
+    </div>
+  </div>
+
+  <table class="price-table">
+    <tr><th>プラン</th><th>月額費用（税抜）</th><th>スポット上限</th></tr>
+    <tr><td>Standard</td><td>38,000円</td><td>50件</td></tr>
+    <tr><td>Pro</td><td>48,000円</td><td>150件</td></tr>
+    <tr><td>Pro plus</td><td>68,000円</td><td>500件</td></tr>
+    <tr><td>Enterprise</td><td>78,000円〜</td><td>1,000件〜</td></tr>
+  </table>
+  <div class="note-box">※初期費用100,000円（税抜）は全プラン共通です。スポット登録代行・経路設定代行・クリエイティブ（マップイラスト作成等）・IoT各種トラッキング機器の導入費用は、内容に応じて別途お見積りとなります。</div>
+
+  <h3 style="margin:30px 0 4px;font-size:16px;color:var(--navy);">導入スケジュール（5ステップ）</h3>
+  <div class="flow">
+    <div class="step"><div class="stepno">1</div><h4>お申込</h4><p>ヒアリング・お見積り</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="step"><div class="stepno">2</div><h4>マップ作成</h4><p>フロア図・スポット情報の登録</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="step"><div class="stepno">3</div><h4>システム設定</h4><p>権限設計・連携設定</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="step"><div class="stepno">4</div><h4>テスト運用</h4><p>社内関係者での動作確認</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="step"><div class="stepno">5</div><h4>本運用開始</h4><p>更新権限の付与・運用サポート</p></div>
+  </div>
+  <div class="banner">最短1ヶ月程度でテスト運用が可能です。予算化前の「お試し導入（スモールスタート）」も柔軟に対応いたします。</div>
+</section>
+
+<!-- デモ -->
+<section id="demo" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Demo</span>
+    <h2 class="sec-title">サンプルデモ＆初回確認事項</h2>
+    <div class="gradbar"></div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>実際の公開デモ画面のご案内</h3>
+        <p>基本的な動作を確認できるサンプルマップをご用意しています。スマホ・タブレット・パソコンでご確認いただけます。</p>
+        <p style="margin-top:10px;"><a href="https://demo-mappro.smartmap-pro.com/maps/OA3rd47y/parcels/228/ja" target="_blank" rel="noopener" style="color:var(--grad1);font-weight:700;">工場向けサンプルデモを見る →</a></p>
+      </div>
+      <div class="card">
+        <h3>初回ヒアリングの確認事項</h3>
+        <ol>
+          <li>先行して可視化・マップ化したい対象エリア（例：第一プラント等）の具体的な範囲や階層数</li>
+          <li>現状お手元にお持ちの初期図面データの有無・形式（CAD、PDFなど）</li>
+          <li>自社スタッフ様・協力会社様等の想定されるユーザー規模（おおよそのアカウント数）</li>
+          <li>一部フロアに絞った「お試し導入」のご要望・進め方</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta" id="contact">
+  <div class="cta-inner">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>貴社の現場に合わせた構成・お見積りをご提案します。オンラインでのご説明も可能です。</p>
+    <div class="cta-buttons">
+      <a class="btn primary" href="https://smartpr.jp/smartpr/" target="_blank" rel="noopener">WEBからお問い合わせ</a>
+      <a class="btn ghost" href="https://timerex.net/s/info.smartpr_dfa5/0116fea9" target="_blank" rel="noopener">オンライン商談を予約</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© WWS Corporation. ｜ 本資料は工場向けMapPenguin Proご提案資料および公式サービス資料の内容をもとに作成した参考資料です（個社名は一般化しています）。料金・実績・仕様は変更される場合があるため、最終的なご提案時に最新情報をご確認ください。</p>
+</footer>
+
+</body>
+</html>
