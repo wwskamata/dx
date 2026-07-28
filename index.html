@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT・AI等先端技術導入支援補助金 活用プラン | WWS</title>
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --navy-deep: #123A66;
+    --orange: #E87722;
+    --green-fill: #DFF7EA;
+    --blue-fill: #DCE6FA;
+    --orange-fill: #FDEBD8;
+    --teal: #2BB89A;
+    --text-dark: #222222;
+    --text-sub: #555555;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", "Meiryo", sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+    line-height: 1.75;
+  }
+  header.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 90px 24px 70px;
+    text-align: center;
+  }
+  header.hero .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  header.hero h1 {
+    font-size: 2.4rem;
+    margin: 0 0 14px;
+    font-weight: 800;
+  }
+  header.hero p.sub {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  header.hero .cta {
+    margin-top: 34px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    padding: 14px 34px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .btn.secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 70px 24px;
+  }
+  section.alt { background: #F7F9FC; }
+  h2.sec-title {
+    font-size: 1.7rem;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  p.sec-sub {
+    text-align: center;
+    color: var(--text-sub);
+    margin-bottom: 44px;
+  }
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 800px) {
+    .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+    padding: 26px;
+  }
+  .card h3 { margin-top: 0; color: var(--navy); font-size: 1.05rem; }
+  .card.fill-blue { background: var(--blue-fill); }
+  .card.fill-green { background: var(--green-fill); }
+  .card.fill-orange { background: var(--orange-fill); }
+  .num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .flow .step {
+    flex: 1 1 200px;
+    background: #fff;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .flow .step .step-head {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  .flow .step .step-body {
+    padding: 16px;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+  }
+  .flow .arrow {
+    align-self: center;
+    color: var(--teal);
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.92rem;
+  }
+  th, td {
+    border: 1px solid #D9E2EC;
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--navy);
+    color: #fff;
+  }
+  tr:nth-child(even) td { background: #F5F8FC; }
+  .table-scroll { overflow-x: auto; }
+  .highlight-box {
+    background: var(--green-fill);
+    border: 1px solid var(--navy);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 26px;
+  }
+  .highlight-box h4 { margin-top: 0; color: var(--navy); }
+  .gradient-bar {
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #03699A, #EF9F02, #15294C);
+    margin: 18px 0 26px;
+  }
+  .badge-red {
+    display: inline-block;
+    background: #C00000;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .circle-icon {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: #F4F4F4;
+    border: 3px solid #0B1F45;
+    margin: 0 auto 14px;
+  }
+  .assets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  @media (max-width: 800px) { .assets-grid { grid-template-columns: 1fr; } }
+  footer {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 46px 24px;
+  }
+  footer a { color: #fff; }
+  .note {
+    font-size: 0.82rem;
+    color: var(--text-sub);
+    font-style: italic;
+  }
+  .toc {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding: 18px 24px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 0.88rem;
+  }
+  .toc a { color: var(--navy); text-decoration: none; font-weight: 600; }
+  .toc a:hover { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<nav class="toc">
+  <a href="#overview">補助金概要</a>
+  <a href="#challenge">課題</a>
+  <a href="#model">ご提案モデル</a>
+  <a href="#services">サービス内容例</a>
+  <a href="#assets">自社開発実績</a>
+  <a href="#cost">概算費用</a>
+  <a href="#schedule">スケジュール</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<header class="hero">
+  <span class="badge">岡山市 IoT・AI等先端技術導入支援補助金 対応</span>
+  <h1>IoT・AI等先端技術導入支援補助金 活用プラン</h1>
+  <p class="sub">kintone × 楽楽販売 × MapPenguin ―― 事前検証（上限150万円）から本格導入（上限750万円）まで、初期負担を抑えて先端技術導入を進めるご提案</p>
+  <div class="cta">
+    <a class="btn" href="#contact">まずは無料相談</a>
+    <a class="btn secondary" href="#overview">補助金の詳細を見る</a>
+  </div>
+</header>
+
+<section id="overview">
+  <h2 class="sec-title">1. 岡山市IoT・AI等先端技術導入支援補助金の概要</h2>
+  <p class="sec-sub">事前検証から本格導入まで、2段階で経費を補助する制度</p>
+  <div class="grid cols-2">
+    <div class="card fill-blue">
+      <h3>事前検証事業</h3>
+      <p style="font-size:1.3rem;font-weight:bold;">上限150万円 ／ 補助率1/2</p>
+      <p>導入効果・実現性を確認するためのコンサル・PoC等の事前検証費用を補助</p>
+    </div>
+    <div class="card fill-green">
+      <h3>検証済み先端技術導入事業（本導入）</h3>
+      <p style="font-size:1.3rem;font-weight:bold;">上限750万円 ／ 補助率1/3</p>
+      <p>事前検証済みのIoT・AI・ロボットを本格導入する取組（設計・開発・構築・改修の委託費含む）</p>
+    </div>
+  </div>
+  <div class="highlight-box">
+    <h4>募集スケジュール（令和8年度）</h4>
+    <p>募集（1）：令和8年6月30日（火）締切　　募集（2）：令和8年8月31日（月）締切※予算残時のみ　　募集（3）：以降、令和8年11月まで毎月末締切※予算残時のみ</p>
+    <p class="note">対象：岡山市内に本社・主要事業所を置く中小企業者。国・県等の補助金との重複受給は不可。岡山市内業者からの購入・発注が経費の過半を超える場合、本導入事業の審査で加点されます。</p>
+  </div>
+</section>
+
+<section class="alt" id="challenge">
+  <h2 class="sec-title">2. このような課題はありませんか</h2>
+  <p class="sec-sub">岡山市内の製造業でよく見られる4つのボトルネック</p>
+  <div class="grid cols-4">
+    <div class="card"><span class="num-badge">01</span><h3>紙帳票・Excel管理</h3><p>作業日報や検査記録が紙・Excelに散在し、集計や共有に時間がかかる</p></div>
+    <div class="card"><span class="num-badge">02</span><h3>目視検査の属人化</h3><p>品質検査を熟練者の目視に依存し、教育・引き継ぎに時間がかかる</p></div>
+    <div class="card"><span class="num-badge">03</span><h3>受発注の手作業</h3><p>見積・受注・請求をExcelや紙で個別対応し、ミスや二度手間が発生</p></div>
+    <div class="card"><span class="num-badge">04</span><h3>稼働状況が見えない</h3><p>設備の稼働・停止状況をリアルタイムで把握できず、改善が後手に回る</p></div>
+  </div>
+</section>
+
+<section id="model">
+  <h2 class="sec-title">3. ご提案の全体像 ― 3つのレイヤーを組み合わせて提案</h2>
+  <p class="sec-sub">案件の規模・性質に応じて、レイヤーを単独または組み合わせて適用</p>
+  <div class="grid cols-3">
+    <div class="card fill-blue">
+      <h3>レイヤー1　フル受託型<br><span style="font-weight:normal;font-size:0.85rem;">（内外プロセス型）</span></h3>
+      <p>受注・請求・画像アップロード・AI判定・帳票作成をkintoneでフルカスタマイズ。月額課金を抑えた一括請負で提案。</p>
+    </div>
+    <div class="card fill-green">
+      <h3>レイヤー2　SaaS活用型<br><span style="font-weight:normal;font-size:0.85rem;">（楽楽販売×kintone）</span></h3>
+      <p>販売管理が主目的の案件は楽楽販売／kintoneをベースに必要部分だけカスタマイズ。月額のストック収益を確保。</p>
+    </div>
+    <div class="card fill-orange">
+      <h3>レイヤー3　自社アセット活用型<br><span style="font-weight:normal;font-size:0.85rem;">（MapPenguin等）</span></h3>
+      <p>MapPenguin・SmartStampCard・SmartRecieco等、自社SaaSで実装済みのGPS判定・AI画像判定技術を転用し短納期化。</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="services">
+  <h2 class="sec-title">4. サービス内容例（補助対象経費区分別）</h2>
+  <p class="sec-sub">岡山市補助金の対象経費区分（A〜E）ごとの具体例</p>
+
+  <h3 style="color:var(--navy);">① 受発注システム関連SaaSの設計・導入支援（kintone×楽楽販売）</h3>
+  <div class="table-scroll">
+  <table>
+    <tr><th style="width:22%;">区分</th><th>具体例</th></tr>
+    <tr><td>(A) 外注費・手数料・報酬費</td><td>受発注業務フローの現状分析コンサルティング／kintone・楽楽販売による受注・見積・請求・発注管理アプリの設計・構築・カスタマイズ委託費／既存の会計・在庫システムとのAPI連携開発費／導入時の操作研修・技術指導費（旅費含む）</td></tr>
+    <tr><td>(B) 機器・システム等購入費</td><td>kintone・楽楽販売のソフトウェアライセンス／バーコード・QRコードリーダー／受発注業務用ハンディターミナル・タブレット</td></tr>
+    <tr><td>(C) 賃借料・使用料・利用料</td><td>kintone・楽楽販売の月額クラウド利用料／連携用プラグインのライセンス利用料（補助対象期間分のみ）</td></tr>
+    <tr><td>(D) 原材料費</td><td>該当性は低い（自社でデバイスを製作する場合のみ）</td></tr>
+    <tr><td>(E) 運搬費</td><td>導入機器（タブレット・リーダー等）の配送費</td></tr>
+  </table>
+  </div>
+
+  <h3 style="color:var(--navy);margin-top:36px;">② 社内・工場向けデジタルマップ（MapPenguin）導入支援</h3>
+  <div class="table-scroll">
+  <table>
+    <tr><th style="width:22%;">区分</th><th>具体例</th></tr>
+    <tr><td>(A) 外注費・手数料・報酬費</td><td>工場内レイアウト・動線調査コンサルティング／MapPenguinを用いた屋内位置判定システムの設計・構築・カスタマイズ委託費／ビーコン測位精度の実証実験（PoC）委託費／資産・作業員トラッキング機能の開発費</td></tr>
+    <tr><td>(B) 機器・システム等購入費</td><td>BLEビーコン・屋内測位デバイス／Wi-Fiアクセスポイント・LPWA機器／確認用モニター・タブレット／MapPenguinソフトウェアライセンス</td></tr>
+    <tr><td>(C) 賃借料・使用料・利用料</td><td>MapPenguinクラウド利用料（月額）／位置情報データ基盤のクラウド利用料／IoT通信SIM等の回線使用料</td></tr>
+    <tr><td>(D) 原材料費</td><td>自社でセンサーモジュールを製作する場合の部材費</td></tr>
+    <tr><td>(E) 運搬費</td><td>ビーコン・アクセスポイント等の配送・搬入費</td></tr>
+  </table>
+  </div>
+  <p class="note" style="margin-top:16px;">いずれのサービスも、申請書類作成の伴走支援自体は補助対象外経費のため、別立ての有償サービスとして案内します。</p>
+</section>
+
+<section id="assets">
+  <div class="badge-red" style="margin-bottom:14px;display:inline-block;">WWS ならでは</div>
+  <h2 class="sec-title" style="text-align:left;">実装済みの技術を<span style="color:#C00000;">転用</span>できるスピード</h2>
+  <div class="gradient-bar"></div>
+  <p class="sec-sub" style="text-align:left;max-width:none;margin-bottom:36px;">kintoneパートナーとしての実績だけでなく、自社SaaSプロダクトの開発を通じて岡山市補助金が想定する要素技術（監視・画像判定・位置判定）を既に実装しています。</p>
+  <div class="assets-grid">
+    <div>
+      <div class="circle-icon"></div>
+      <h3 style="margin:0 0 8px;">MapPenguin</h3>
+      <p style="font-size:0.9rem;color:var(--text-sub);">GPSによる位置・来訪判定<br>（IoT：監視・制御技術）</p>
+    </div>
+    <div>
+      <div class="circle-icon"></div>
+      <h3 style="margin:0 0 8px;">SmartStampCard</h3>
+      <p style="font-size:0.9rem;color:var(--text-sub);">QR／GPSでのスポット判定<br>（IoT：デバイス連携実績）</p>
+    </div>
+    <div>
+      <div class="circle-icon"></div>
+      <h3 style="margin:0 0 8px;">SmartRecieco</h3>
+      <p style="font-size:0.9rem;color:var(--text-sub);">画像・レシートのAI／OCR自動判定<br>（AI画像判定実績）</p>
+    </div>
+  </div>
+  <div style="background:var(--navy);color:#fff;text-align:center;padding:22px;border-radius:12px;margin-top:34px;font-weight:bold;">
+    ゼロから開発するより短納期・低コストで、補助対象の先端技術導入を実現します。
+  </div>
+</section>
+
+<section class="alt" id="cost">
+  <h2 class="sec-title">5. 概算費用・補助金充当イメージ</h2>
+  <p class="sec-sub">税抜・目安。実際の見積りは案件内容により確定します</p>
+  <div class="table-scroll">
+  <table>
+    <tr><th>項目</th><th>初期費用</th><th>月額費用</th><th>備考</th></tr>
+    <tr><td>楽楽販売（販売管理SaaS）</td><td>15万円〜</td><td>6万円〜</td><td>ユーザー数・オプションで変動</td></tr>
+    <tr><td>kintone（業務改善基盤）</td><td>0円</td><td>7,500円〜</td><td>5ユーザーから契約可</td></tr>
+    <tr><td>WWSカスタム開発（事前検証規模）</td><td>150万円規模</td><td>―</td><td>補助率1/2 適用時の想定</td></tr>
+    <tr><td>WWSカスタム開発（本導入規模）</td><td>450〜750万円規模</td><td>―</td><td>補助率1/3 適用時の想定</td></tr>
+  </table>
+  </div>
+  <div class="highlight-box">
+    <h4>補助金充当後の自己負担イメージ（例：本導入・受託額600万円の場合）</h4>
+    <p>受託額 600万円 × 補助率1/3 ＝ 補助金 200万円　→　自己負担額の目安 約400万円<br>
+    事前検証段階（150万円規模・補助率1/2）を経ている場合は、自己負担額の目安は約75万円からスタートできます。</p>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2 class="sec-title">6. 導入スケジュール（例）</h2>
+  <p class="sec-sub">募集（1）6/30締切に間に合わせる場合のモデルケース</p>
+  <div class="flow">
+    <div class="step"><div class="step-head">〜6月30日</div><div class="step-body">事前検証事業<br>申請書類作成支援</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="step-head">7月下旬〜</div><div class="step-body">交付決定後、事前検証を実施<br>（PoC・コンサル）</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="step-head">9月〜10月</div><div class="step-body">検証結果の取りまとめ<br>本導入事業への申請支援</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="step-head">11月〜</div><div class="step-body">本導入プロジェクト<br>開発・実装</div></div>
+  </div>
+  <p class="note" style="text-align:center;margin-top:24px;">補助事業完了・実績報告の最終期限は令和9年2月26日です。募集（2）8/31締切・募集（3）以降月末締切（いずれも予算残時のみ）にも並行して対応可能です。</p>
+</section>
+
+<footer id="contact">
+  <h2 style="margin-top:0;">まずは6月30日締切の事前検証事業から、無理のない規模でご相談ください。</h2>
+  <p>株式会社WorldWideSystem（WWS）　ご担当：鎌田　<a href="mailto:kamata@ww-system.com">kamata@ww-system.com</a></p>
+  <p style="font-size:0.8rem;opacity:0.7;margin-top:24px;">本ページの補助金情報は2026年7月28日時点の公開情報に基づく目安です。最新の公募要領は岡山市公式サイトでご確認ください。</p>
+</footer>
+
+</body>
+</html>
