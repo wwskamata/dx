@@ -136,6 +136,9 @@
   /* Reference photos from source materials */
   .shot{border:1px solid var(--line);border-radius:12px;margin:14px 0 0;box-shadow:0 4px 14px rgba(11,31,69,.08);}
   .card .shot.sm{margin:8px 0 12px;}
+  .scene-media{display:flex;gap:14px;margin:8px 0 12px;flex-wrap:wrap;}
+  .scene-media .shot.sm{margin:0;flex:1 1 260px;min-width:0;object-fit:cover;}
+  .scene-media .shot.sm.photo{flex:1 1 300px;}
 
   /* Emphasized challenges section */
   h2.sec-title.big{font-size:30px;}
@@ -190,6 +193,7 @@
   <h2 class="sec-title big">こんな課題、ございませんか？</h2>
   <div class="gradbar"></div>
   <p class="sec-desc">工場の現場に潜む「情報の見えにくさ」が、安全・効率・技術継承の障壁になっていませんか。想定されるすべての課題をMapPenguin Proが解決します。</p>
+  <img src="/dx/assets/mappro-img/issue_chips.jpg" alt="6つの課題：ヒヤリハット活動の形骸化・一時通行規制の周知遅延・避難情報の即時把握不足・教育訓練マニュアルの壁・防虫防鼠等の衛生管理・現場設備カメラ等の孤立化" style="max-width:100%;margin-top:14px;">
   <img src="/dx/assets/mappro-img/product_tablet.jpg" alt="工場現場で使用するMapPenguin Proタブレット画面イメージ" class="shot">
   <div class="grid g3" style="margin-top:22px;">
     <div class="card issue-card"><div class="mark-x">!</div><h3>ヒヤリハット活動の形骸化</h3><p>紙やExcelベースの運用で、どの場所で何が起きたかを直感的に共有・蓄積できない。</p></div>
@@ -232,7 +236,10 @@
 
     <div class="card" style="margin-top:24px;">
       <span class="tag">活用シーン①</span>
-      <img src="/dx/assets/mappro-img/scene1_safety.jpg" alt="安全・リスク管理（ヒヤリハット）イメージ" class="shot sm">
+      <div class="scene-media">
+        <img src="/dx/assets/mappro-img/scene1_safety.jpg" alt="安全・リスク管理（ヒヤリハット）イメージ" class="shot sm">
+        <img src="/dx/assets/mappro-img/scene1_photo.jpg" alt="現場でタブレットを使い安全管理を行う様子" class="shot sm photo">
+      </div>
       <h3>安全・リスク管理（ヒヤリハット）</h3>
       <ol>
         <li><b>地図ベースの直観投稿</b>：現場でヒヤリハットが発生した際、その場所のフロアマップを長押しし、即時にスマホからマッピング登録できます。</li>
@@ -242,7 +249,10 @@
     </div>
     <div class="card" style="margin-top:16px;">
       <span class="tag">活用シーン②</span>
-      <img src="/dx/assets/mappro-img/scene2_evac.jpg" alt="通行規制・避難経路・防災イメージ" class="shot sm">
+      <div class="scene-media">
+        <img src="/dx/assets/mappro-img/scene2_evac.jpg" alt="通行規制・避難経路・防災イメージ" class="shot sm">
+        <img src="/dx/assets/mappro-img/scene2_photo.jpg" alt="通行止め情報をスマホで確認・遠隔監視する様子" class="shot sm photo">
+      </div>
       <h3>通行規制・避難経路・防災</h3>
       <ol>
         <li><b>一時通行止め・規制表示</b>：設備改修や床面補修工事などに合わせ、特定の通路を「通行不可」ステータスに設定できます。</li>
@@ -252,7 +262,10 @@
     </div>
     <div class="card" style="margin-top:16px;">
       <span class="tag">活用シーン③</span>
-      <img src="/dx/assets/mappro-img/scene3_training.jpg" alt="教育・技術継承イメージ" class="shot sm">
+      <div class="scene-media">
+        <img src="/dx/assets/mappro-img/scene3_training.jpg" alt="教育・技術継承イメージ" class="shot sm">
+        <img src="/dx/assets/mappro-img/scene3_photo.jpg" alt="タブレットの動画マニュアルで技術継承を行う様子" class="shot sm photo">
+      </div>
       <h3>教育・技術継承</h3>
       <ol>
         <li><b>設備設置場所への動画紐付け</b>：特定の機械・充填機・化学装置のピンをタップすると、操作手順動画がその場で再生されます。</li>
@@ -262,7 +275,10 @@
     </div>
     <div class="card" style="margin-top:16px;">
       <span class="tag">活用シーン④</span>
-      <img src="/dx/assets/mappro-img/scene4_pest.jpg" alt="衛生管理（防虫・防鼠）イメージ" class="shot sm">
+      <div class="scene-media">
+        <img src="/dx/assets/mappro-img/scene4_pest.jpg" alt="衛生管理（防虫・防鼠）イメージ" class="shot sm">
+        <img src="/dx/assets/mappro-img/scene4_photo.jpg" alt="スマホでトラップ設置箇所を確認・記録する様子" class="shot sm photo">
+      </div>
       <h3>衛生管理（防虫・防鼠）</h3>
       <ol>
         <li><b>トラップ設置箇所の完全マッピング</b>：防鼠用・防虫用のトラップや捕獲器具の配置位置を、アイコン別・カラー別にマッピングします。</li>
