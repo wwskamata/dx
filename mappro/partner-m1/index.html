@@ -252,10 +252,13 @@
   }
 
   .price-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:13.2px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);}
-  .price-table th,.price-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);}
+  .price-table th,.price-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;}
   .price-table th{background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;}
   .price-table td:first-child,.price-table th:first-child{color:var(--navy);font-weight:700;background:#eef1f6;}
   .price-table tr:last-child td{border-bottom:none;}
+  .price-table .yes-mark{color:#1a8754;font-weight:800;white-space:nowrap;}
+  .price-table .no-mark{color:var(--red);font-weight:800;white-space:nowrap;}
+  .price-table .free-mark{color:var(--teal);font-weight:700;white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -420,35 +423,40 @@
       <h3>卸値割引方式（代理店契約型）</h3>
       <dl>
         <dt>契約主体</dt><dd>WWS ⇔ 貴社（パートナー様）で直接契約</dd>
-        <dt>卸価格</dt><dd>初期費用・月額費用の標準部分を、希望小売価格から20%〜30%OFFで卸し</dd>
+        <dt>卸価格</dt><dd>SaaS費用（初期・月額プラン／オプション）を、希望小売価格から20%〜30%OFFで卸し</dd>
+        <dt>自由設定分</dt><dd>ディレクション・カスタマイズ・運用代行/サポート費用は、貴社にて自由に価格設定いただけます</dd>
         <dt>請求</dt><dd>貴社からエンドクライアント様へご請求（提示価格は貴社にて設定）</dd>
-        <dt>粗利</dt><dd>卸価格と提示価格の差額がそのまま貴社の粗利になります</dd>
       </dl>
-      <span class="discount">20%〜30% OFF（標準部分）</span>
+      <span class="discount">SaaS費用：20%〜30% OFF＋自由設定分</span>
     </div>
     <div class="scheme-card">
       <div class="scheme-no">2</div>
       <h3>キックバック方式（直接契約型）</h3>
       <dl>
         <dt>契約主体</dt><dd>WWS ⇔ エンドクライアント様が直接契約</dd>
-        <dt>お支払い</dt><dd>年間のご利用実績に応じて、方式①の値引き相当額を謝礼（キックバック）として貴社へお支払い</dd>
+        <dt>お支払い</dt><dd>年間のご利用実績に応じて、SaaS費用（下表A①・B①②）の値引き相当額を謝礼として貴社へお支払い</dd>
+        <dt>対象外</dt><dd>ディレクション・カスタマイズ・運用代行/サポート・従量課金はキックバック対象外</dd>
         <dt>請求事務</dt><dd>エンドクライアント様への請求はWWSが窓口となり実施</dd>
-        <dt>貴社の役割</dt><dd>ご紹介・提案活動に専念いただける方式です</dd>
       </dl>
-      <span class="discount">年間実績に応じて謝礼支払い</span>
+      <span class="discount">SaaS費用（A①・B①②）のみ対象</span>
     </div>
   </div>
 
+  <h3 style="margin:34px 0 4px;font-size:16px;color:var(--navy);">費用項目別・売価設定ルール</h3>
+  <p class="sec-desc" style="margin-bottom:4px;">代理店様で販売いただく場合の売価設定と、各方式の対象可否です。</p>
   <table class="price-table">
-    <tr><th>比較項目</th><th>①卸値割引方式</th><th>②キックバック方式</th></tr>
-    <tr><td>契約の当事者</td><td>WWS ⇔ 貴社</td><td>WWS ⇔ エンドクライアント</td></tr>
-    <tr><td>エンドへの請求</td><td>貴社が請求・価格設定</td><td>WWSが直接請求</td></tr>
-    <tr><td>マージンの得方</td><td>卸価格との差額（初期・月額の標準部分）</td><td>年間実績連動の謝礼（キックバック）</td></tr>
-    <tr><td>貴社の事務負担</td><td>見積・請求対応が必要</td><td>紹介・提案が中心、請求事務なし</td></tr>
+    <tr><th>区分</th><th>項目</th><th>エンドクライアント様への売価設定</th><th>①卸値割引方式</th><th>②キックバック方式</th></tr>
+    <tr><td rowspan="3">A 初期費用</td><td>① SaaS費用</td><td>基本的にはWWS小売価格</td><td class="yes-mark">○ 20〜30%OFFで卸</td><td class="yes-mark">○ 対象</td></tr>
+    <tr><td>② ディレクション費用</td><td>WWS提示価格に対し貴社にて自由設定</td><td class="free-mark">貴社設定分</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td>③ カスタマイズ費用</td><td>WWS提示価格に対し貴社にて自由設定</td><td class="free-mark">貴社設定分</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td rowspan="3">B 月額費用</td><td>① SaaSプラン月額</td><td>基本的にはWWS小売価格</td><td class="yes-mark">○ 20〜30%OFFで卸</td><td class="yes-mark">○ 対象</td></tr>
+    <tr><td>② SaaSオプション月額</td><td>基本的にはWWS小売価格</td><td class="yes-mark">○ 20〜30%OFFで卸</td><td class="yes-mark">○ 対象</td></tr>
+    <tr><td>③ 運用代行・サポート支援費用</td><td>WWS提示価格に対し貴社にて自由設定</td><td class="free-mark">貴社設定分</td><td class="no-mark">× 対象外</td></tr>
+    <tr><td>C 従量課金</td><td>値引き対象外</td><td>実費のまま基本的にはWWS小売価格</td><td class="no-mark">× 対象外</td><td class="no-mark">× 対象外</td></tr>
   </table>
 
   <div class="note-box">
-    ※卸価格の対象は初期費用・月額費用の「標準部分」を想定しており、オプション機能やカスタム開発費は別途ご相談となります。掛け率・対象範囲・お支払い時期などの詳細は、正式なパートナー契約の締結時に個別にすり合わせます。
+    ※キックバック方式では「A① SaaS費用（初期）」「B① SaaSプラン月額」「B② SaaSオプション月額」の3項目のみが対象です。ディレクション・カスタマイズ・運用代行/サポート費用は貴社が独自に提供するサービスとして自由に価格設定いただく部分のため、卸値割引方式であれば貴社の収益源に、キックバック方式であれば別途貴社とエンドクライアント様の直接契約（別建て）としてご検討ください。従量課金は両方式共通で値引き対象外です。掛け率・対象範囲・お支払い時期などの詳細は、正式なパートナー契約の締結時に個別にすり合わせます。
   </div>
 </section>
 
