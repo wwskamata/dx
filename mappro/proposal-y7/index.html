@@ -156,10 +156,8 @@
       <a href="#issues">課題</a>
       <a href="#reasons">選ばれる理由</a>
       <a href="#scenes">活用シーン</a>
-      <a href="#permission">権限設計</a>
-      <a href="#security">セキュリティ</a>
-      <a href="#environment">利用環境</a>
       <a href="#cases">導入実績</a>
+      <a href="#spec">権限・セキュリティ・動作環境</a>
       <a href="#price">機能・費用・スケジュール</a>
       <a href="#demo">デモ</a>
       <a href="#faq">FAQ</a>
@@ -283,13 +281,35 @@
   </div>
 </section>
 
-<!-- 想定利用者と権限例 -->
-<section id="permission" class="alt">
+<!-- 導入実績 -->
+<section id="cases">
+  <span class="eyebrow">Reference</span>
+  <h2 class="sec-title">導入実績</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">製造・物流・商業施設・自治体など、業種を問わず導入が拡大しています。工場・製造現場での導入実績もございます。</p>
+  <img src="/dx/assets/mappro-img/trusted_logos.jpg" alt="導入企業ロゴ" class="shot">
+  <img src="/dx/assets/mappro-img/cases_photo.jpg" alt="導入実績イメージ写真" class="shot">
+  <div class="grid g3" style="margin-top:22px;">
+    <div class="card"><span class="tag">工場・製造業</span><h3>AGC株式会社</h3><p>工場内の設備検索・保守業務の効率化にMapPenguin Proを活用。</p></div>
+    <div class="card"><span class="tag">工場・製造業</span><h3>ハルナグループ（群馬／飲料製造）</h3><p>工場内の設備・作業動線の可視化に活用。</p></div>
+    <div class="card"><span class="tag">インフラ資産管理</span><h3>Osaka Metro</h3><p>全路線駅構内の資産情報をマップで一元管理。</p></div>
+    <div class="card"><span class="tag">フロアマップ導入事例</span><img src="/dx/assets/mappro-img/rusutsu_screens.jpg" alt="ルスツリゾート デジタルホテルマップ 画面イメージ" class="shot sm"><h3>ルスツリゾート デジタルホテルマップ</h3><p>加森観光株式会社様。リゾート施設内2つのホテルのフロアマップに採用し、多言語対応でスムーズに案内。</p></div>
+    <div class="card"><span class="tag">キャンペーン活用</span><h3>SUNTORY</h3><p>一般向けキャンペーンでの展開店舗可視化にデジタルマップを活用。</p></div>
+    <div class="card"><span class="tag">自治体・観光案内</span><h3>岡山県／大分市</h3><p>観光・案内向けデジタルマップとしての活用実績。</p></div>
+  </div>
+  <div class="note-box">※各社の実績は弊社ご提案資料・導入実績資料に掲載の実名事例です。詳細な活用内容が必要な場合は、個別にご紹介します。</div>
+</section>
+
+<!-- 権限・セキュリティ・動作環境 -->
+<section id="spec" class="alt">
   <div class="inner">
-    <span class="eyebrow">Access Control</span>
-    <h2 class="sec-title">想定利用者と機能権限例</h2>
+    <span class="eyebrow">Access, Security &amp; Environment</span>
+    <h2 class="sec-title">権限設計・セキュリティ・動作環境</h2>
     <div class="gradbar"></div>
-    <p class="sec-desc">アカウント単位でセキュアにアクセス制御を施す権限設計です。協力会社と自社社員のアクセスエリア制限も完全に分離できます。</p>
+    <p class="sec-desc">アカウント単位のアクセス制御、堅牢なセキュリティ・多言語対応、そして特別なサーバー構築が不要な動作環境をまとめてご案内します。</p>
+
+    <h3 style="margin:8px 0 4px;font-size:16px;color:var(--navy);">想定利用者と機能権限例</h3>
+    <p class="sec-desc" style="margin-bottom:4px;">協力会社と自社社員のアクセスエリア制限も完全に分離できます。</p>
     <img src="/dx/assets/mappro-img/role_avatars.jpg" alt="想定される利用者・役割イメージ" class="shot">
     <table class="price-table" style="margin-top:22px;">
       <tr><th>利用区分</th><th>地図閲覧</th><th>ヒヤリハット</th><th>マニュアル動画</th><th>カメラ／IoT確認</th><th>スポット編集</th></tr>
@@ -302,53 +322,22 @@
       <tr><td>海外スタッフ</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">－</td><td class="center">多言語表示</td></tr>
       <tr><td>システム管理者（DX推進部）</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center yes-mark">○</td><td class="center">全体</td></tr>
     </table>
-  </div>
-</section>
 
-<!-- セキュリティ -->
-<section id="security">
-  <span class="eyebrow">Security &amp; Language</span>
-  <h2 class="sec-title">セキュリティ・多言語対応</h2>
-  <div class="gradbar"></div>
-  <p class="sec-desc">セキュアなアクセス制御と11ヵ国語対応により、グローバルな安全運用を両立します。</p>
-  <div class="grid g2">
-    <div class="card"><h3>堅牢なアクセス制御機能</h3><p>2要素認証（2FA）標準対応、Azure AD SSO連携（カスタム対応）、社内LAN限定のネットワーク・IP制限など、機密情報に応じた通信制御を設定できます。</p></div>
-    <div class="card"><h3>11ヵ国語に対応する多言語機能</h3><p>英語・中国語（簡／繁）・韓国語・タイ語・ベトナム語・インドネシア語等に標準対応。CSV一括翻訳データ登録で、スポット名・警告表示の翻訳を一瞬で反映できます。</p></div>
-  </div>
-</section>
-
-<!-- 動作・ご利用環境 -->
-<section id="environment">
-  <span class="eyebrow">System Requirements</span>
-  <h2 class="sec-title">動作・ご利用環境</h2>
-  <div class="gradbar"></div>
-  <p class="sec-desc">特別なサーバー構築は一切不要。ブラウザアクセスのみで動作するスマートシステムです。</p>
-  <img src="/dx/assets/mappro-img/env_devices.jpg" alt="動作環境イメージ（管理画面・現場ユーザー画面のマルチデバイス対応）" class="shot">
-  <div class="grid g3" style="margin-top:22px;">
-    <div class="card"><h3>インターネット回線・Webブラウザ</h3><p>インターネットにアクセス可能な一般回線でご利用いただけます。現場での接続に伴うパケット通信費用等は、各デバイス側の実費負担となります。</p></div>
-    <div class="card"><h3>管理者（管理画面）</h3><p>パソコン環境：主要な各種Webブラウザ（Google Chrome／Microsoft Edge／Safari等の最新バージョン）に対応します。</p></div>
-    <div class="card"><h3>現場ユーザー（閲覧画面）</h3><p>マルチデバイス対応：スマートフォン・タブレット・PCに対応。ブラウザ起動のため、専用アプリのインストールは不要です。</p></div>
-  </div>
-</section>
-
-<!-- 導入実績 -->
-<section id="cases" class="alt">
-  <div class="inner">
-    <span class="eyebrow">Reference</span>
-    <h2 class="sec-title">導入実績</h2>
-    <div class="gradbar"></div>
-    <p class="sec-desc">製造・物流・商業施設・自治体など、業種を問わず導入が拡大しています。工場・製造現場での導入実績もございます。</p>
-    <img src="/dx/assets/mappro-img/trusted_logos.jpg" alt="導入企業ロゴ" class="shot">
-    <img src="/dx/assets/mappro-img/cases_photo.jpg" alt="導入実績イメージ写真" class="shot">
-    <div class="grid g3" style="margin-top:22px;">
-      <div class="card"><span class="tag">工場・製造業</span><h3>AGC株式会社</h3><p>工場内の設備検索・保守業務の効率化にMapPenguin Proを活用。</p></div>
-      <div class="card"><span class="tag">工場・製造業</span><h3>ハルナグループ（群馬／飲料製造）</h3><p>工場内の設備・作業動線の可視化に活用。</p></div>
-      <div class="card"><span class="tag">インフラ資産管理</span><h3>Osaka Metro</h3><p>全路線駅構内の資産情報をマップで一元管理。</p></div>
-      <div class="card"><span class="tag">フロアマップ導入事例</span><img src="/dx/assets/mappro-img/rusutsu_screens.jpg" alt="ルスツリゾート デジタルホテルマップ 画面イメージ" class="shot sm"><h3>ルスツリゾート デジタルホテルマップ</h3><p>加森観光株式会社様。リゾート施設内2つのホテルのフロアマップに採用し、多言語対応でスムーズに案内。</p></div>
-      <div class="card"><span class="tag">キャンペーン活用</span><h3>SUNTORY</h3><p>一般向けキャンペーンでの展開店舗可視化にデジタルマップを活用。</p></div>
-      <div class="card"><span class="tag">自治体・観光案内</span><h3>岡山県／大分市</h3><p>観光・案内向けデジタルマップとしての活用実績。</p></div>
+    <h3 style="margin:34px 0 4px;font-size:16px;color:var(--navy);">セキュリティ・多言語対応</h3>
+    <p class="sec-desc" style="margin-bottom:4px;">セキュアなアクセス制御と11ヵ国語対応により、グローバルな安全運用を両立します。</p>
+    <div class="grid g2">
+      <div class="card"><h3>堅牢なアクセス制御機能</h3><p>2要素認証（2FA）標準対応、Azure AD SSO連携（カスタム対応）、社内LAN限定のネットワーク・IP制限など、機密情報に応じた通信制御を設定できます。</p></div>
+      <div class="card"><h3>11ヵ国語に対応する多言語機能</h3><p>英語・中国語（簡／繁）・韓国語・タイ語・ベトナム語・インドネシア語等に標準対応。CSV一括翻訳データ登録で、スポット名・警告表示の翻訳を一瞬で反映できます。</p></div>
     </div>
-    <div class="note-box">※各社の実績は弊社ご提案資料・導入実績資料に掲載の実名事例です。詳細な活用内容が必要な場合は、個別にご紹介します。</div>
+
+    <h3 style="margin:34px 0 4px;font-size:16px;color:var(--navy);">動作・ご利用環境</h3>
+    <p class="sec-desc" style="margin-bottom:4px;">特別なサーバー構築は一切不要。ブラウザアクセスのみで動作するスマートシステムです。</p>
+    <img src="/dx/assets/mappro-img/env_devices.jpg" alt="動作環境イメージ（管理画面・現場ユーザー画面のマルチデバイス対応）" class="shot">
+    <div class="grid g3" style="margin-top:22px;">
+      <div class="card"><h3>インターネット回線・Webブラウザ</h3><p>インターネットにアクセス可能な一般回線でご利用いただけます。現場での接続に伴うパケット通信費用等は、各デバイス側の実費負担となります。</p></div>
+      <div class="card"><h3>管理者（管理画面）</h3><p>パソコン環境：主要な各種Webブラウザ（Google Chrome／Microsoft Edge／Safari等の最新バージョン）に対応します。</p></div>
+      <div class="card"><h3>現場ユーザー（閲覧画面）</h3><p>マルチデバイス対応：スマートフォン・タブレット・PCに対応。ブラウザ起動のため、専用アプリのインストールは不要です。</p></div>
+    </div>
   </div>
 </section>
 
