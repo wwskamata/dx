@@ -431,6 +431,8 @@
       <input type="text" id="cf-name" placeholder="例：山田 太郎">
       <label for="cf-company">会社名（任意）</label>
       <input type="text" id="cf-company" placeholder="例：〇〇工業株式会社">
+      <label for="cf-referrer">ご紹介代理店名（任意）</label>
+      <input type="text" id="cf-referrer" placeholder="例：〇〇株式会社様よりご紹介">
       <label for="cf-contact">ご連絡先（メールまたは電話番号）</label>
       <input type="text" id="cf-contact" placeholder="例：taro@example.com／090-1234-5678">
       <label for="cf-content">内容</label>
@@ -460,6 +462,7 @@ function sendContactForm(e){
   fd.append('types', types.length ? types.join('、') : '（未選択）');
   fd.append('name', document.getElementById('cf-name').value.trim());
   fd.append('agency', document.getElementById('cf-company').value.trim());
+  fd.append('referrer', document.getElementById('cf-referrer').value.trim());
   fd.append('contact', document.getElementById('cf-contact').value.trim());
   fd.append('target', '');
   fd.append('content', document.getElementById('cf-content').value.trim());
