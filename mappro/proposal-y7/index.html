@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>デジタルフロアマップ「MapPenguin Pro」導入ご提案 | 工場・製造現場向け</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
   window.PW_GATE_CONFIG = {
     hash: "7612f0cf3c6c56daef36c1866a0babefadbe33f9baaf6d5f662d409051ec1128",
@@ -126,6 +127,17 @@
   .cta h2{font-size:24px;margin:0 0 12px;font-weight:800;}
   .cta p{color:#d7dfef;margin:0 0 26px;}
   .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .contact-form{background:#fff;border-radius:14px;padding:26px 28px;margin:22px auto 0;max-width:520px;text-align:left;}
+  .contact-form h3{margin:0 0 14px;font-size:15px;color:var(--navy);font-weight:800;}
+  .contact-form label{display:block;font-size:12.5px;color:var(--sub);font-weight:700;margin:0 0 5px;}
+  .contact-form input[type="text"],.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-bottom:14px;font-family:inherit;color:var(--ink);}
+  .contact-form textarea{resize:vertical;}
+  .contact-form .checkbox-group{display:flex;flex-wrap:wrap;gap:8px 14px;margin:0 0 16px;}
+  .contact-form .chk{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink);background:#f5f6f8;border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;margin:0;}
+  .contact-form .chk input{width:auto;margin:0;}
+  .contact-form button{background:var(--red);color:#fff;border:none;border-radius:30px;padding:12px 30px;font-weight:700;font-size:14px;cursor:pointer;}
+  .contact-form button:hover{opacity:.9;}
+  .contact-note{font-size:11.5px;color:var(--sub);margin-top:10px;}
   .btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:700;font-size:13.8px;text-decoration:none;}
   .btn.primary{background:#fff;color:var(--navy);}
   .btn.ghost{border:1px solid rgba(255,255,255,.5);color:#fff;}
@@ -404,20 +416,93 @@
   <div class="cta-inner">
     <h2>ご相談・お問い合わせはこちらから</h2>
     <p>貴社の現場に合わせた構成・お見積り・デモのご案内など、お気軽にお声がけください。</p>
-    <div class="cta-buttons">
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%94%E7%9B%B8%E8%AB%87%EF%BC%9AMapPenguin%20Pro" class="btn primary">ご相談</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%9AMapPenguin%20Pro" class="btn ghost">お問い合わせ</a>
-      <a href="/dx/assets/mappro-docs/mappenguin-service-guide-compressed.pdf" target="_blank" rel="noopener" class="btn ghost">資料</a>
-      <a href="https://demo-mappro.smartmap-pro.com/maps/OA3rd47y/parcels/228/ja" target="_blank" rel="noopener" class="btn ghost">デモ</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%8A%E8%A6%8B%E7%A9%8D%E3%82%8A%E4%BE%9D%E9%A0%BC%EF%BC%9AMapPenguin%20Pro" class="btn ghost">見積</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E5%95%86%E8%AB%87%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC%EF%BC%9AMapPenguin%20Pro" class="btn ghost">商談</a>
-    </div>
+
+    <form class="contact-form" id="client-contact-form" onsubmit="sendContactForm(event)">
+      <h3>このままご相談内容を送信</h3>
+      <label>ご依頼内容（複数選択可）</label>
+      <div class="checkbox-group">
+        <label class="chk"><input type="checkbox" name="cf-type" value="ご相談">ご相談</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="お問い合わせ">お問い合わせ</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="資料">資料</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="デモ">デモ</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="見積">見積</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="商談">商談</label>
+      </div>
+      <label for="cf-name">お名前</label>
+      <input type="text" id="cf-name" placeholder="例：山田 太郎">
+      <label for="cf-company">会社名（任意）</label>
+      <input type="text" id="cf-company" placeholder="例：〇〇工業株式会社">
+      <label for="cf-contact">ご連絡先（メールまたは電話番号）</label>
+      <input type="text" id="cf-contact" placeholder="例：taro@example.com／090-1234-5678">
+      <label for="cf-content">内容</label>
+      <textarea id="cf-content" rows="4" placeholder="ご相談内容・ご質問などをご記入ください"></textarea>
+      <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_HERE" style="margin-bottom:14px;"></div>
+      <button type="submit" id="cf-submit-btn">送信する</button>
+      <p class="contact-note" id="cf-status"></p>
+    </form>
   </div>
 </div>
 
 <footer>
   <p>© WWS Corporation. ｜ 本資料は工場向けMapPenguin Proご提案資料および公式サービス資料の内容をもとに作成した参考資料です（個社名は一般化しています）。料金・実績・仕様は変更される場合があるため、最終的なご提案時に最新情報をご確認ください。</p>
 </footer>
+
+<script>
+// 鎌田様: GAS Webアプリをデプロイ後、下記を実際の値に差し替えてください（partner-m1側と同じURL）。
+var GAS_ENDPOINT = "GAS_WEB_APP_URL_HERE";
+
+function sendContactForm(e){
+  e.preventDefault();
+  var statusEl = document.getElementById('cf-status');
+  var submitBtn = document.getElementById('cf-submit-btn');
+  var types = Array.prototype.slice.call(document.querySelectorAll('input[name="cf-type"]:checked')).map(function(el){ return el.value; });
+
+  var token = (typeof grecaptcha !== 'undefined') ? grecaptcha.getResponse() : '';
+  if (!token) {
+    statusEl.textContent = "reCAPTCHAのチェックを確認してください。";
+    statusEl.style.color = "#c62828";
+    return false;
+  }
+
+  var fd = new FormData();
+  fd.append('page', 'proposal-y7');
+  fd.append('types', types.length ? types.join('、') : '（未選択）');
+  fd.append('name', document.getElementById('cf-name').value.trim());
+  fd.append('agency', document.getElementById('cf-company').value.trim());
+  fd.append('contact', document.getElementById('cf-contact').value.trim());
+  fd.append('target', '');
+  fd.append('content', document.getElementById('cf-content').value.trim());
+  fd.append('g-recaptcha-response', token);
+
+  submitBtn.disabled = true;
+  statusEl.style.color = "#666";
+  statusEl.textContent = "送信中です…";
+
+  fetch(GAS_ENDPOINT, { method: 'POST', body: fd })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      submitBtn.disabled = false;
+      if (data && data.ok) {
+        statusEl.style.color = "#1b7a3d";
+        statusEl.textContent = "送信しました。担当者よりご連絡いたします。";
+        document.getElementById('client-contact-form').reset();
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      } else {
+        statusEl.style.color = "#c62828";
+        statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      }
+    })
+    .catch(function(){
+      submitBtn.disabled = false;
+      statusEl.style.color = "#c62828";
+      statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
+      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+    });
+
+  return false;
+}
+</script>
 
 </body>
 </html>
