@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>デジタルフロアマップ「MapPenguin Pro」導入ご提案 | 工場・製造現場向け</title>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
   window.PW_GATE_CONFIG = {
     hash: "7612f0cf3c6c56daef36c1866a0babefadbe33f9baaf6d5f662d409051ec1128",
@@ -436,7 +435,6 @@
       <input type="text" id="cf-contact" placeholder="例：taro@example.com／090-1234-5678">
       <label for="cf-content">内容</label>
       <textarea id="cf-content" rows="4" placeholder="ご相談内容・ご質問などをご記入ください"></textarea>
-      <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_HERE" style="margin-bottom:14px;"></div>
       <button type="submit" id="cf-submit-btn">送信する</button>
       <p class="contact-note" id="cf-status"></p>
     </form>
@@ -457,13 +455,6 @@ function sendContactForm(e){
   var submitBtn = document.getElementById('cf-submit-btn');
   var types = Array.prototype.slice.call(document.querySelectorAll('input[name="cf-type"]:checked')).map(function(el){ return el.value; });
 
-  var token = (typeof grecaptcha !== 'undefined') ? grecaptcha.getResponse() : '';
-  if (!token) {
-    statusEl.textContent = "reCAPTCHAのチェックを確認してください。";
-    statusEl.style.color = "#c62828";
-    return false;
-  }
-
   var fd = new FormData();
   fd.append('page', 'proposal-y7');
   fd.append('types', types.length ? types.join('、') : '（未選択）');
@@ -472,7 +463,6 @@ function sendContactForm(e){
   fd.append('contact', document.getElementById('cf-contact').value.trim());
   fd.append('target', '');
   fd.append('content', document.getElementById('cf-content').value.trim());
-  fd.append('g-recaptcha-response', token);
 
   submitBtn.disabled = true;
   statusEl.style.color = "#666";
@@ -486,18 +476,15 @@ function sendContactForm(e){
         statusEl.style.color = "#1b7a3d";
         statusEl.textContent = "送信しました。担当者よりご連絡いたします。";
         document.getElementById('client-contact-form').reset();
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       } else {
         statusEl.style.color = "#c62828";
         statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       }
     })
     .catch(function(){
       submitBtn.disabled = false;
       statusEl.style.color = "#c62828";
       statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
-      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
     });
 
   return false;
