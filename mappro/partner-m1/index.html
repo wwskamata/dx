@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MapPenguin Pro パートナー様向けご提案 | 工場・現場業務向けデジタルマップ</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
   window.PW_GATE_CONFIG = {
     hash: "e5026c8238315caae00ebf5fe949a81077b19853a7d42c1e2438793665034ae6",
@@ -647,7 +648,7 @@
       <p>Email：<a href="mailto:kamata@ww-system.com">kamata@ww-system.com</a>　｜　電話：<a href="tel:07044220705">070-4422-0705</a></p>
     </div>
 
-    <form class="contact-form" onsubmit="sendContactForm(event)">
+    <form class="contact-form" id="partner-contact-form" onsubmit="sendContactForm(event)">
       <h3>このままご相談内容を送信</h3>
       <label>ご依頼内容（複数選択可）</label>
       <div class="checkbox-group">
@@ -668,8 +669,9 @@
       <input type="text" id="cf-target" placeholder="例：△△工業株式会社様">
       <label for="cf-content">内容</label>
       <textarea id="cf-content" rows="4" placeholder="ご相談内容・ご質問などをご記入ください"></textarea>
-      <button type="submit">送信する</button>
-      <p class="contact-note">送信ボタンを押すと、内容を差し込んだメール作成画面（kamata@ww-system.com宛）が開きます。</p>
+      <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_HERE" style="margin-bottom:14px;"></div>
+      <button type="submit" id="cf-submit-btn">送信する</button>
+      <p class="contact-note" id="cf-status"></p>
     </form>
   </div>
 </div>
@@ -680,22 +682,60 @@
 </footer>
 
 <script>
+// 鎌田様: GAS Webアプリをデプロイ後、下記2つを実際の値に差し替えてください。
+//   GAS_ENDPOINT       … デプロイ時に発行される「.../exec」で終わるURL
+//   （reCAPTCHAサイトキーは上のdata-sitekey属性側も忘れずに差し替え）
+var GAS_ENDPOINT = "GAS_WEB_APP_URL_HERE";
+
 function sendContactForm(e){
   e.preventDefault();
+  var statusEl = document.getElementById('cf-status');
+  var submitBtn = document.getElementById('cf-submit-btn');
   var types = Array.prototype.slice.call(document.querySelectorAll('input[name="cf-type"]:checked')).map(function(el){ return el.value; });
-  var name = document.getElementById('cf-name').value.trim();
-  var agency = document.getElementById('cf-agency').value.trim();
-  var contact = document.getElementById('cf-contact').value.trim();
-  var target = document.getElementById('cf-target').value.trim();
-  var content = document.getElementById('cf-content').value.trim();
-  var body = "ご依頼内容：" + (types.length ? types.join("、") : "（未選択）")
-    + "\nお名前：" + name
-    + "\n代理店名：" + agency
-    + "\nご連絡先：" + contact
-    + "\n提案先情報：" + target
-    + "\n\nご相談内容：\n" + content;
-  var subject = "MapPenguin Pro パートナーご相談" + (agency ? "（" + agency + "）" : "");
-  window.location.href = "mailto:kamata@ww-system.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  var token = (typeof grecaptcha !== 'undefined') ? grecaptcha.getResponse() : '';
+  if (!token) {
+    statusEl.textContent = "reCAPTCHAのチェックを確認してください。";
+    statusEl.style.color = "#c62828";
+    return false;
+  }
+
+  var fd = new FormData();
+  fd.append('page', 'partner-m1');
+  fd.append('types', types.length ? types.join('、') : '（未選択）');
+  fd.append('name', document.getElementById('cf-name').value.trim());
+  fd.append('agency', document.getElementById('cf-agency').value.trim());
+  fd.append('contact', document.getElementById('cf-contact').value.trim());
+  fd.append('target', document.getElementById('cf-target').value.trim());
+  fd.append('content', document.getElementById('cf-content').value.trim());
+  fd.append('g-recaptcha-response', token);
+
+  submitBtn.disabled = true;
+  statusEl.style.color = "#666";
+  statusEl.textContent = "送信中です…";
+
+  fetch(GAS_ENDPOINT, { method: 'POST', body: fd })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      submitBtn.disabled = false;
+      if (data && data.ok) {
+        statusEl.style.color = "#1b7a3d";
+        statusEl.textContent = "送信しました。担当者よりご連絡いたします。";
+        document.getElementById('partner-contact-form').reset();
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      } else {
+        statusEl.style.color = "#c62828";
+        statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+      }
+    })
+    .catch(function(){
+      submitBtn.disabled = false;
+      statusEl.style.color = "#c62828";
+      statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、直接メール（kamata@ww-system.com）にてご連絡ください。";
+      if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+    });
+
   return false;
 }
 </script>
