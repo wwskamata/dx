@@ -235,8 +235,11 @@
   .contact-form{background:#fff;border-radius:14px;padding:26px 28px;margin:22px auto 0;max-width:520px;text-align:left;}
   .contact-form h3{margin:0 0 14px;font-size:15px;color:var(--navy);font-weight:800;}
   .contact-form label{display:block;font-size:12.5px;color:var(--sub);font-weight:700;margin:0 0 5px;}
-  .contact-form input,.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-bottom:14px;font-family:inherit;color:var(--ink);}
+  .contact-form input[type="text"],.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-bottom:14px;font-family:inherit;color:var(--ink);}
   .contact-form textarea{resize:vertical;}
+  .contact-form .checkbox-group{display:flex;flex-wrap:wrap;gap:8px 14px;margin:0 0 16px;}
+  .contact-form .chk{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink);background:#f5f6f8;border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;margin:0;}
+  .contact-form .chk input{width:auto;margin:0;}
   .contact-form button{background:var(--red);color:#fff;border:none;border-radius:30px;padding:12px 30px;font-weight:700;font-size:14px;cursor:pointer;}
   .contact-form button:hover{opacity:.9;}
   .contact-note{font-size:11.5px;color:var(--sub);margin-top:10px;}
@@ -639,15 +642,6 @@
   <div class="cta-inner">
     <h2>ご相談・お問い合わせ・商談のご依頼はこちらから</h2>
     <p>提案資料・見積り例・デモ画面など、貴社の商談に合わせてご用意します。株式会社WorldWideSystemの担当者（鎌田）までお声がけください。</p>
-    <div class="cta-buttons">
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%94%E7%9B%B8%E8%AB%87%EF%BC%9AMapPenguin%20Pro%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC" class="btn primary">ご相談</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%9AMapPenguin%20Pro%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC" class="btn ghost">お問い合わせ</a>
-      <a href="/dx/assets/mappro-docs/mappenguin-service-guide-compressed.pdf" target="_blank" rel="noopener" class="btn ghost">資料</a>
-      <a href="https://demo-mappro.smartmap-pro.com/maps/OA3rd47y/parcels/228/ja" target="_blank" rel="noopener" class="btn ghost">デモ</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E3%81%8A%E8%A6%8B%E7%A9%8D%E3%82%8A%E4%BE%9D%E9%A0%BC%EF%BC%9AMapPenguin%20Pro%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC" class="btn ghost">見積</a>
-      <a href="mailto:kamata@ww-system.com?subject=%E5%95%86%E8%AB%87%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC%EF%BC%9AMapPenguin%20Pro%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC" class="btn ghost">商談</a>
-    </div>
-
     <div class="contact-card">
       <p><b>ご相談窓口：鎌田</b>（株式会社WorldWideSystem）</p>
       <p>Email：<a href="mailto:kamata@ww-system.com">kamata@ww-system.com</a>　｜　電話：<a href="tel:07044220705">070-4422-0705</a></p>
@@ -655,8 +649,21 @@
 
     <form class="contact-form" onsubmit="sendContactForm(event)">
       <h3>このままご相談内容を送信</h3>
+      <label>ご依頼内容（複数選択可）</label>
+      <div class="checkbox-group">
+        <label class="chk"><input type="checkbox" name="cf-type" value="ご相談">ご相談</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="お問い合わせ">お問い合わせ</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="資料">資料</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="デモ">デモ</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="見積">見積</label>
+        <label class="chk"><input type="checkbox" name="cf-type" value="商談">商談</label>
+      </div>
+      <label for="cf-name">お名前</label>
+      <input type="text" id="cf-name" placeholder="例：山田 太郎">
       <label for="cf-agency">代理店名</label>
       <input type="text" id="cf-agency" placeholder="例：〇〇株式会社">
+      <label for="cf-contact">ご連絡先（メールまたは電話番号）</label>
+      <input type="text" id="cf-contact" placeholder="例：taro@example.com／090-1234-5678">
       <label for="cf-target">提案先情報（任意）</label>
       <input type="text" id="cf-target" placeholder="例：△△工業株式会社様">
       <label for="cf-content">内容</label>
@@ -675,10 +682,18 @@
 <script>
 function sendContactForm(e){
   e.preventDefault();
+  var types = Array.prototype.slice.call(document.querySelectorAll('input[name="cf-type"]:checked')).map(function(el){ return el.value; });
+  var name = document.getElementById('cf-name').value.trim();
   var agency = document.getElementById('cf-agency').value.trim();
+  var contact = document.getElementById('cf-contact').value.trim();
   var target = document.getElementById('cf-target').value.trim();
   var content = document.getElementById('cf-content').value.trim();
-  var body = "代理店名：" + agency + "\n提案先情報：" + target + "\n\nご相談内容：\n" + content;
+  var body = "ご依頼内容：" + (types.length ? types.join("、") : "（未選択）")
+    + "\nお名前：" + name
+    + "\n代理店名：" + agency
+    + "\nご連絡先：" + contact
+    + "\n提案先情報：" + target
+    + "\n\nご相談内容：\n" + content;
   var subject = "MapPenguin Pro パートナーご相談" + (agency ? "（" + agency + "）" : "");
   window.location.href = "mailto:kamata@ww-system.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   return false;
