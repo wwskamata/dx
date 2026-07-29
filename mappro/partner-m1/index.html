@@ -291,6 +291,8 @@
   .card .shot.sm{margin:8px 0 12px;}
   .shot-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px;}
   @media(max-width:860px){.shot-row{grid-template-columns:1fr;}}
+  .card-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px;}
+  .card-photos img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line);border-radius:10px;box-shadow:0 4px 14px rgba(11,31,69,.06);}
 
   /* Emphasized challenges section */
   h2.sec-title.big{font-size:30px;}
@@ -580,13 +582,6 @@
       <div class="card"><span class="tag">キャンペーン活用</span><h3>SUNTORY</h3><p>一般向けキャンペーンでの展開店舗可視化にデジタルマップを活用。</p></div>
       <div class="card"><span class="tag">自治体・観光案内</span><h3>岡山県／大分市</h3><p>観光・案内向けデジタルマップとしての活用実績。</p></div>
     </div>
-    <div class="chiprow">
-      <span class="chip">京都府</span><span class="chip">松本市</span><span class="chip">大分市</span>
-      <span class="chip">JAPAN AIRLINES</span><span class="chip">TOBU</span><span class="chip">SEKISUI HEIM</span>
-      <span class="chip">AGC</span><span class="chip">Osaka Metro</span><span class="chip">全国健康保険協会</span>
-      <span class="chip">札幌市円山動物園</span><span class="chip">他 多数</span>
-    </div>
-    <div class="note-box">※AGC株式会社・ハルナグループ・Osaka Metroの実績は工場向けMapPenguin Proご提案資料（2026年7月版）掲載情報、その他はMapPenguin サービスの導入実績資料（2025.06版）掲載の実名事例です。ロゴ・団体名チップは公式サイト「導入実績」掲載情報に基づく一部抜粋です。個社別の詳細な活用内容が必要な場合は、商談時に個別の事例資料をご用意します。</div>
   </div>
 </section>
 
@@ -606,15 +601,21 @@
     <div class="plus">=</div>
     <div class="node" style="background:var(--navy);color:#fff;">MapPenguin Pro<span style="color:#c9d4ea;">地図上で可視化・運用へ接続</span></div>
   </div>
-  <div class="grid g3" style="margin-top:30px;">
-    <div class="card"><img src="/dx/assets/mappro-img/linkup-iot-gps.jpg" alt="IoT・GPSトラッキングデバイスのイメージ" class="shot sm"><h3>IoT・GPSトラッキング連携</h3><p>物流・配送の車両位置、営業支援の移動ルート、設備保守の巡回・点検実績、レンタル資産の所在追跡など、幅広い業務データを地図上でリアルタイムに可視化できます。</p></div>
-    <div class="card"><img src="/dx/assets/mappro-img/linkup-camera-sensor.jpg" alt="工場天井の監視カメラ・センサーイメージ" class="shot sm"><h3>監視カメラ・センサー連携</h3><p>マップ上のカメラマークからライブ・静止画を確認。温度・湿度等のIoTセンサーをAPI接続し、規定値超えのアラートを地図上で即座に検知できます。</p></div>
-    <div class="card"><img src="/dx/assets/mappro-img/linkup-asset-vehicle.jpg" alt="重要設備・車両トラッキングイメージ" class="shot sm"><h3>重要資産・車両トラッキング</h3><p>SORACOM等のビーコン・GPSトラッカーを重機やフォークリフトに取り付け、現在位置を工場マップにリアルタイム描画。接触事故の防止にも活用できます。</p></div>
+  <div class="grid g2" style="margin-top:30px;">
+    <div class="card">
+      <div class="card-photos"><img src="/dx/assets/mappro-img/linkup-iot-gps.jpg" alt="GPSトラッキングデバイスのイメージ"><img src="/dx/assets/mappro-img/linkup-asset-vehicle.jpg" alt="工場内の重要設備・車両トラッキングイメージ"></div>
+      <h3>IoT・GPS／資産・車両トラッキング連携</h3>
+      <p>物流・配送の車両位置、営業支援の移動ルート、設備保守の巡回・点検実績、レンタル資産の所在追跡など、幅広い業務データを地図上でリアルタイムに可視化。ビーコン・GPSトラッカーを重機やフォークリフトに取り付ければ、工場内の現在位置もリアルタイム描画でき、接触事故の防止にも活用できます。</p>
+    </div>
+    <div class="card">
+      <div class="card-photos"><img src="/dx/assets/mappro-img/linkup-camera-sensor.jpg" alt="工場天井の監視カメラ・センサーイメージ"><img src="/dx/assets/mappro-img/linkup-camera-newinstall.jpg" alt="監視カメラ新規設置・監視モニターイメージ"></div>
+      <h3>監視カメラ・センサー連携（新規設置も対応）</h3>
+      <p>マップ上のカメラマークからライブ・静止画を確認。温度・湿度等のIoTセンサーをAPI接続し、規定値超えのアラートを地図上で即座に検知できます。既存カメラがない現場でも、貴社の設置工事とセットでカメラ・センサー連携込みの提案が可能です。</p>
+    </div>
   </div>
-  <div class="grid g3" style="margin-top:16px;">
+  <div class="grid g2" style="margin-top:16px;">
     <div class="card"><img src="/dx/assets/mappro-img/linkup-signage.jpg" alt="受付・エントランスのデジタルサイネージイメージ" class="shot sm"><h3>デジタルサイネージ</h3><p>受付・エントランスのサイネージにMapPenguin Proを表示し、機器導入とセットで提案。</p></div>
     <div class="card"><img src="/dx/assets/mappro-img/linkup-wifi-tablet.jpg" alt="Wi-Fiルーター・タブレット端末イメージ" class="shot sm"><h3>Wi-Fi・タブレット端末</h3><p>屋内通信環境の整備やキオスク端末の設置提案と、地図コンテンツをセットで納品できます。</p></div>
-    <div class="card"><img src="/dx/assets/mappro-img/linkup-camera-newinstall.jpg" alt="定点監視カメラ新規設置・監視モニターイメージ" class="shot sm"><h3>定点監視カメラの新規設置</h3><p>既存カメラがない現場でも、貴社の設置工事とセットでカメラ・センサー連携込みの提案が可能です。</p></div>
   </div>
   <div class="note-box" style="margin-top:20px;">
     ※IoT・GPSトラッキング連携は、初期導入費用としてソラコム社のデバイス購入費用とユーザーコンソールの登録が発生し、GPSトラッキングデータ量に応じて別途従量料金が発生します（詳細は個別お見積り）。通信機器・回線を扱う貴社であれば、この初期セットアップ部分を貴社の提案範囲に組み込みやすい構成です。
