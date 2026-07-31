@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MapPenguin / MapPenguin Pro ネーミング・仕様 現状整理｜社内共有</title>
+<script>
+  window.PW_GATE_CONFIG = {
+    hash: "c6891c0c238c01fa6c68daabd28f5f5f964ed25d3500a1c0a35b6de283082e9b",
+    label: "MapPenguin Pro 現状整理（社内共有）"
+  };
+</script>
+<script src="/dx/assets/password-gate.js"></script>
+<style>
+  :root{
+    --navy:#0B1F45;
+    --navy-deep:#15294C;
+    --teal:#22455B;
+    --red:#C00000;
+    --grad1:#03699A;
+    --grad2:#EF9F02;
+    --grad3:#15294C;
+    --card:#F4F4F4;
+    --ink:#1c2430;
+    --sub:#5b6472;
+    --line:#e3e6ea;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.8;
+    font-size:15.5px;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .gradbar{height:5px;width:64px;background:linear-gradient(90deg,var(--grad1),var(--grad2),var(--grad3));border-radius:3px;margin:10px 0 22px;}
+
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
+  .nav-wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);}
+  .brand .logo-pen{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--grad1),var(--grad3));display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex:none;}
+  .brand .name{font-size:16px;letter-spacing:.02em;}
+  .brand .badge{background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px;letter-spacing:.05em;}
+  .meta-right{font-size:11.5px;color:var(--sub);text-align:right;line-height:1.6;}
+  nav.pagelinks{display:flex;flex-wrap:wrap;gap:2px;width:100%;}
+  nav.pagelinks a{font-size:12px;color:var(--sub);text-decoration:none;padding:8px 8px;border-radius:6px;white-space:nowrap;}
+  nav.pagelinks a:hover{background:var(--card);color:var(--navy);}
+
+  .hero{background:radial-gradient(1200px 480px at 15% -10%, #12315e 0%, var(--navy) 45%, var(--navy-deep) 100%);color:#fff;padding:52px 20px 44px;}
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .kicker{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:20px;letter-spacing:.04em;margin-bottom:18px;}
+  .hero h1{font-size:clamp(22px,3.6vw,32px);line-height:1.5;margin:0 0 14px;font-weight:800;}
+  .hero p.lead{font-size:14.5px;color:#d7dfef;max-width:700px;margin:0 0 8px;}
+  .hero-grad{height:6px;width:120px;border-radius:4px;background:linear-gradient(90deg,var(--grad1),var(--grad2),#fff);margin:20px 0;}
+
+  section{padding:48px 20px;max-width:var(--maxw);margin:0 auto;}
+  section.alt{background:var(--card);max-width:none;}
+  section.alt .inner{max-width:var(--maxw);margin:0 auto;padding:48px 20px;}
+  .eyebrow{font-size:12.5px;font-weight:700;color:var(--red);letter-spacing:.06em;text-transform:uppercase;}
+  h2.sec-title{font-size:21px;color:var(--navy);margin:6px 0 0;font-weight:800;}
+  p.sec-desc{color:var(--sub);max-width:760px;margin:0 0 8px;}
+
+  .grid{display:grid;gap:16px;margin-top:22px;}
+  .grid.g2{grid-template-columns:repeat(2,1fr);}
+  .grid.g3{grid-template-columns:repeat(3,1fr);}
+  @media(max-width:860px){
+    .grid.g2,.grid.g3{grid-template-columns:1fr;}
+  }
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 22px;}
+  section.alt .card{background:#fff;}
+  .card h3{margin:0 0 8px;font-size:15px;color:var(--navy);font-weight:700;}
+  .card p{margin:0;color:var(--sub);font-size:13.6px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:#e7edf1;padding:3px 9px;border-radius:20px;margin-bottom:10px;}
+  .tag.red{color:var(--red);background:#fbe7e7;}
+
+  .issue-card{border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(192,0,0,.07);}
+  .issue-card .mark-x{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#fbe7e7;color:var(--red);font-weight:800;font-size:15px;margin-bottom:10px;}
+
+  table.datatable{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);}
+  table.datatable th,table.datatable td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  table.datatable th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;}
+  table.datatable tr:last-child td{border-bottom:none;}
+  table.datatable td.hl{color:var(--red);font-weight:700;}
+
+  .quote-src{font-size:12px;color:var(--sub);border-left:3px solid var(--line);padding-left:10px;margin:8px 0 0;}
+
+  .note-box{border:1px dashed #c7cfdb;background:#fbfbfc;border-radius:10px;padding:14px 16px;font-size:12.5px;color:var(--sub);margin-top:20px;}
+  .note-box.warn{border-color:#f0c4c4;background:#fdf4f4;color:#7a3232;}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .toc a{font-size:12.5px;color:var(--navy);background:#eef1f6;border:1px solid var(--line);padding:7px 13px;border-radius:20px;text-decoration:none;}
+  .toc a:hover{background:var(--navy);color:#fff;}
+
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:800;margin-right:8px;flex:none;}
+  .step-row{display:flex;align-items:flex-start;gap:4px;margin-bottom:14px;}
+  .step-row div.txt h4{margin:0 0 4px;font-size:14px;color:var(--navy);}
+  .step-row div.txt p{margin:0;font-size:13px;color:var(--sub);}
+
+  footer{background:var(--navy-deep);color:#9fb0cf;font-size:11.5px;text-align:center;padding:26px 20px;}
+  footer a{color:#c9d4ea;text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-wrap">
+    <div class="brand">
+      <div class="logo-pen">MP</div>
+      <span class="name">MapPenguin / MapPenguin Pro<span class="badge">社内共有</span></span>
+    </div>
+    <div class="meta-right">WorldWideSystem<br>現状整理メモ　2026.07 作成</div>
+    <nav class="pagelinks">
+      <a href="#issues">発端の懸念点</a>
+      <a href="#current">現状把握</a>
+      <a href="#conflicts">発見された矛盾点</a>
+      <a href="#conclusion">検討の結論</a>
+      <a href="#next">次のアクション</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">MapPenguin Pro（工場向け）ネーミング・仕様 現状整理</span>
+    <h1>「MapPenguin」と「MapPenguin Pro」、<br>何が混乱の原因になっているかを整理する</h1>
+    <div class="hero-grad"></div>
+    <p class="lead">
+      ビジネス版「MapPenguin Pro」の立ち上げに際して生じている、管理画面の切り分け・機能の切り分け・提供先や使用用途の棲み分け・ネーミングの混乱について、
+      実際の管理画面・公式LP・サービス資料を確認した上で、現状と矛盾点、検討の結論をまとめたもの。
+    </p>
+  </div>
+</div>
+
+<!-- 発端の懸念点 -->
+<section id="issues">
+  <span class="eyebrow">Starting Point</span>
+  <h2 class="sec-title">発端となった懸念点</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">検討のきっかけとなった、鎌田氏からの当初の課題認識。</p>
+  <div class="grid g3">
+    <div class="card issue-card"><div class="mark-x">!</div><h3>管理画面の切り分け</h3><p>現在はMapPenguin Proの管理画面から、MapPenguinの管理画面へリンクが張られている状態。データ登録の窓口が一本化されていない。</p></div>
+    <div class="card issue-card"><div class="mark-x">!</div><h3>機能の切り分け</h3><p>MapPenguin＝スポット登録・経路設定、Pro＝データ登録権限設定・交通規制、という切り分けだが、Pro側にMapPenguinの機能が一部未実装。</p></div>
+    <div class="card issue-card"><div class="mark-x">!</div><h3>提供先・用途の棲み分け</h3><p>MapPenguinはログイン不要の一般公開向け、Proはログイン必須・社内/グループ向けの管理コンソールという特性の違い。</p></div>
+    <div class="card issue-card"><div class="mark-x">!</div><h3>料金設定のあいまいさ</h3><p>MapPenguin Proの費用は、MapPenguinの費用に対する追加ではなく、別途設定が必要になっている。</p></div>
+    <div class="card issue-card"><div class="mark-x">!</div><h3>ネーミング案の再考</h3><p>「MapPenguin DX／ビジネス／ワーク」といった案も出ているが、「Pro」という言葉自体がすでに複数の意味で使われている可能性。</p></div>
+    <div class="card issue-card"><div class="mark-x">!</div><h3>個別API連携案</h3><p>データ層を統合せず、個別にAPI連携で繋ぐという案も出ている。リアルタイム性・障害の連鎖・二重管理のリスクを検討済み。</p></div>
+  </div>
+</section>
+
+<!-- 現状把握 -->
+<section id="current" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Fact Finding</span>
+    <h2 class="sec-title">現状の実態把握（今回確認した事実）</h2>
+    <div class="gradbar"></div>
+    <p class="sec-desc">実際の管理画面（デモ環境）・公式LP3本・サービス説明資料／料金表を確認した結果。</p>
+
+    <h3 style="margin:26px 0 4px;font-size:15.5px;color:var(--navy);">① 公式LPは既に3階層に分かれている</h3>
+    <table class="datatable">
+      <tr><th>URL</th><th>ブランド名</th><th>ポジショニング</th><th>料金表記</th></tr>
+      <tr><td>maps.smartpr.jp/</td><td>MapPenguin</td><td>施設・観光案内向け（一般公開・ログイン不要）</td><td>月額 8,000円〜</td></tr>
+      <tr><td>maps.smartpr.jp/pro/</td><td>MapPenguin Pro</td><td>現場業務向け（API連携・IoT基盤・SSO、一般的な訴求）</td><td class="hl">月額 8,000円〜（本体と同一表記）</td></tr>
+      <tr><td>maps.smartpr.jp/pro/factory</td><td>MapPenguin Pro</td><td>工場・交通・大学・アミューズメント施設のバックヤード向け、SSO必須のクローズド版</td><td class="hl">月額 50,000円〜</td></tr>
+    </table>
+    <p class="quote-src">出典：各LPのmeta情報・本文（2026年7月時点でWebFetchにより確認）</p>
+
+    <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">② 実際のデモ管理画面（第二工場想定）で確認した機能</h3>
+    <p class="sec-desc">demo-mappro.smartmap-pro.com／wsroot／mappro／map にログインした状態で確認。想定より遥かに広い機能を持つ「工場安全・運用管理システム」だった。</p>
+    <div class="grid g3">
+      <div class="card"><h3>通行止め管理</h3><p>区間コード（例：R-03／R-04）、開始・終了日時、理由、登録者、迂回路を持つ通行規制データ。ステータス（公開中等）も管理。</p></div>
+      <div class="card"><h3>全体共有業務データ</h3><p>複数部署・拠点で共有する業務データを一覧管理。</p></div>
+      <div class="card"><h3>屋内マップ（5棟分）</h3><p>A棟：ヒヤリハット／B棟：教育・技術継承／C棟：衛生管理（防虫防鼠）／D棟：資産管理・IoT・監視カメラ連携　など棟ごとに用途が分化。</p></div>
+    </div>
+
+    <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">③ サービス説明資料・料金表からの確認事項</h3>
+    <table class="datatable">
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>本体プラン名</td><td>MapPenguin本体（デジタルマップ）の料金プランは Standard／<b>Pro</b>／Pro plus／Enterprise の4段階。スポット登録数（50〜1,000件超）で区切られており、機能差ではない。</td></tr>
+      <tr><td>Proプランの価格</td><td>proposal-y7参考資料内の料金表では Pro＝月額48,000円（150スポット）。一方 /pro/factory LPは月額50,000円〜と別の数字。</td></tr>
+      <tr><td>スマホ対応の記載</td><td>サービス説明資料・/pro/factory LPともに「スマホで即時登録」「専用アプリ不要」を繰り返し訴求。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 発見された矛盾点 -->
+<section id="conflicts">
+  <span class="eyebrow">Conflicts Found</span>
+  <h2 class="sec-title">発見された矛盾点</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">現状の資料・画面を突き合わせた結果、明確に矛盾している、または混乱の直接的な原因になっている4点。</p>
+
+  <div class="card" style="margin-top:22px;">
+    <span class="tag red">矛盾①</span>
+    <h3>「Pro」という言葉が、少なくとも3つの異なる意味で使われている</h3>
+    <p>
+      (a) 本体MapPenguinの料金表における中間グレードのプラン名（スポット数ベース）<br>
+      (b) /pro/ LPにおける「現場業務向け」という一般的なポジショニング名<br>
+      (c) /pro/factory LPにおける「工場向けクローズド版」という特定バーティカル名<br>
+      同じ単語が、価格帯も機能範囲も異なる3つの対象を指しており、社内外問わず「Proと言われて何を思い浮かべるか」が人によってズレる状態になっている。
+    </p>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <span class="tag red">矛盾②</span>
+    <h3>/pro/ と /pro/factory で料金表記が食い違っている</h3>
+    <p>
+      /pro/ のLPには本体と同じ「月額8,000円〜」がそのまま残っている一方、/pro/factory は「月額50,000円〜」と明記。
+      見る人がどちらのページに辿り着くかで、受け取る価格情報が変わってしまう。/pro/ 側の価格表記が更新し忘れの可能性が高い。
+    </p>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <span class="tag red">矛盾③</span>
+    <h3>スマホ対応表記と、実際の仕様が食い違っている</h3>
+    <p>
+      /pro/factory LPおよびFAQには「スマホで即座に地図登録」「スマートフォンのブラウザで操作でき、専用アプリのインストールは不要」と繰り返し明記されている。
+      一方、鎌田氏からの直近の情報では「Proはスマホ非対応、タブレットまでは対応」とのこと。集客用LPが実仕様より進んだ状態を訴求してしまっている可能性があり、商談・受注後のトラブルに直結しうる。
+    </p>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <span class="tag red">矛盾④（矛盾ではなく裏付け）</span>
+    <h3>経路設定と交通規制のデータ連携は、既に必須要件として明文化されている</h3>
+    <p>
+      デモ画面で通行止め（区間コードR-03／R-04、迂回路）の実データを確認済み。/pro/factory LPでも「属性別ルート案内」「立入禁止区域は自動で回避」を主要機能として掲げている。
+      経路計算エンジンと通行規制データを同一データ層で扱う必要がある、という以前の検討結論は、実装・LP訴求の両面で裏付けられた。
+    </p>
+  </div>
+</section>
+
+<!-- 検討の結論 -->
+<section id="conclusion" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Conclusion So Far</span>
+    <h2 class="sec-title">これまでの検討の結論</h2>
+    <div class="gradbar"></div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>データ・管理画面の統合について</h3>
+        <p>
+          MapPenguinは「ログイン不要の一般公開ビューア」、Proは「ログイン必須の管理コンソール」という構造は、公開フロントエンドと管理用バックエンド（CMS）の一般的な関係に過ぎない。
+          交通規制が経路計算に反映される必要がある以上、データ層は統合が必須。管理画面もPro側に一本化し、MapPenguin側に残る旧来の管理機能（スポット登録・経路設定）を吸収するのが筋。
+        </p>
+      </div>
+      <div class="card">
+        <h3>料金別立てについて</h3>
+        <p>
+          MapPenguinが公開・無料閲覧である以上、「MapPenguin基本料金にProを追加する」という前提は成立しない。Proの料金は「管理コンソール（データ登録・権限設定・交通規制機能）」という
+          B2B SaaSツールへの対価であり独立して当然。ただし今回判明した /pro/ と /pro/factory の価格表記の不一致（矛盾②）は早急に修正が必要。
+        </p>
+      </div>
+      <div class="card">
+        <h3>API連携案について</h3>
+        <p>
+          システムを分離したままAPI連携で繋ぐ案は、リアルタイム性の欠如、障害の連鎖、マスタデータの二重管理、開発・運用コストの増加という欠点があり、
+          かつ管理画面が分かれたままではUI/UXの混乱（発端の懸念点）は解消しない。データ層・管理画面の統合を優先すべき。
+        </p>
+      </div>
+      <div class="card">
+        <h3>ネーミングについて</h3>
+        <p>
+          「Pro」は本体プラン名（Standard/Pro/Pro plus/Enterprise）としてすでに専有されているため、工場向けクローズド版の名称として重ねて使うのは避けたい。
+          WWS公式note記事で「工場DX：デジタルフロアマップで安全・効率・衛生を劇的に改善」という表現が既に使われており、「MapPenguin DX」は工場・現場向けバーティカルの名称として、社内のマーケティング言語とも整合する。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 次のアクション -->
+<section id="next">
+  <span class="eyebrow">Next Actions</span>
+  <h2 class="sec-title">次のアクション（提案）</h2>
+  <div class="gradbar"></div>
+  <div class="step-row"><span class="step-num">1</span><div class="txt"><h4>「Pro」の意味の重複を解消する名称整理</h4><p>本体プラン名の「Pro」と、工場・現場向けクローズド製品の名称を分離する（例：工場向けは MapPenguin DX 等の別名に）。</p></div></div>
+  <div class="step-row"><span class="step-num">2</span><div class="txt"><h4>/pro/ と /pro/factory の料金表記を統一</h4><p>/pro/ LPの「月額8,000円〜」表記が本体と同一のままになっている点を確認し、正しい価格に修正する。</p></div></div>
+  <div class="step-row"><span class="step-num">3</span><div class="txt"><h4>スマホ対応表記の訂正、または対応範囲の再検討</h4><p>LP・資料上の「スマホ対応」表現を実仕様（タブレット以上）に合わせて修正するか、スマホ対応自体を開発ロードマップに乗せるかを判断する。</p></div></div>
+  <div class="step-row"><span class="step-num">4</span><div class="txt"><h4>管理画面の一本化</h4><p>Pro管理画面からMapPenguin管理画面へのリンクを廃止し、スポット登録・経路設定を含む全データ管理機能をPro側の管理コンソールに統合する。</p></div></div>
+  <div class="step-row"><span class="step-num">5</span><div class="txt"><h4>経路設定×交通規制のデータ統合を正式要件化</h4><p>既にデモ・LP双方で実装／訴求されている前提を踏まえ、設計要件として文書化する。</p></div></div>
+
+  <div class="note-box warn">
+    ※本ページはクライアントサイドの簡易パスワードゲートで保護されています（/dx/assets/password-gate.js）。ページのソースコードは誰でも閲覧可能なため、本格的なアクセス制御ではありません。社外秘の詳細な契約金額や個社名など、より機密性の高い情報の掲載は避けてください。
+  </div>
+</section>
+
+<footer>
+  <p>© WWS Corporation. ｜ 本ページは社内共有用の現状整理メモです。実際の管理画面（demo-mappro.smartmap-pro.com）・公式LP（maps.smartpr.jp／pro／factory）・サービス説明資料／料金表の内容を基に作成しています。最新の仕様・料金は各資料の原本をご確認ください。</p>
+</footer>
+
+</body>
+</html>
