@@ -6,7 +6,7 @@
 <title>MapPenguin / MapPenguin Pro ネーミング・仕様 現状整理｜社内共有</title>
 <script>
   window.PW_GATE_CONFIG = {
-    hash: "ef5d397da9ec9a141fd7f392a8790cace35a3ff6316d1689fcb6558d1a24174e",
+    hash: "c6891c0c238c01fa6c68daabd28f5f5f964ed25d3500a1c0a35b6de283082e9b",
     label: "MapPenguin Pro 現状整理（社内共有）"
   };
 </script>
@@ -114,11 +114,13 @@
       <div class="logo-pen">MP</div>
       <span class="name">MapPenguin / MapPenguin Pro<span class="badge">社内共有</span></span>
     </div>
-    <div class="meta-right">WorldWideSystem<br>現状整理メモ　2026.07 作成</div>
+    <div class="meta-right">WorldWideSystem<br>現状整理メモ　2026.07 作成／更新</div>
     <nav class="pagelinks">
       <a href="#issues">発端の懸念点</a>
       <a href="#current">現状把握</a>
       <a href="#conflicts">発見された矛盾点</a>
+      <a href="#service">サービス切り分け案</a>
+      <a href="#pricing">契約・料金案</a>
       <a href="#conclusion">検討の結論</a>
       <a href="#next">次のアクション</a>
     </nav>
@@ -133,6 +135,7 @@
     <p class="lead">
       ビジネス版「MapPenguin Pro」の立ち上げに際して生じている、管理画面の切り分け・機能の切り分け・提供先や使用用途の棲み分け・ネーミングの混乱について、
       実際の管理画面・公式LP・サービス資料を確認した上で、現状と矛盾点、検討の結論をまとめたもの。
+      その後の検討で「Pro→DX」への改称と業種別バーティカル展開という方向性が固まったため、サービス切り分け案・契約料金案を追加している。
     </p>
   </div>
 </div>
@@ -234,6 +237,127 @@
   </div>
 </section>
 
+<!-- サービス切り分け案 -->
+<section id="service">
+  <span class="eyebrow">Service Structure Proposal</span>
+  <h2 class="sec-title">サービス切り分け案（全体像）</h2>
+  <div class="gradbar"></div>
+  <p class="sec-desc">社内検討用スプレッドシート「MapPenguinPro価格案」の全体像シートをもとに整理。「Pro」を「DX」に改称する方向をベースに、共通プラットフォームから2つのブランドツリーへ分岐する構成とする。</p>
+
+  <div class="card" style="margin-top:22px;">
+    <h3>共通プラットフォーム（同一地図エンジン）</h3>
+    <p>MapPenguin・MapPenguin DX（旧Pro）は、地図エンジン・データ基盤を共通化した上で、契約・管理画面・ブランドを分岐させる。</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px;">
+    <div class="card">
+      <span class="tag">OPEN・来場者向け</span>
+      <h3>MapPenguin　maps.smartpr.jp/</h3>
+      <p>一般公開・ログイン不要。業種別ソリューションLPをプラットフォームLPの配下に展開する。</p>
+      <table class="datatable" style="margin-top:14px;">
+        <tr><th>業種別LP</th><th>パス</th></tr>
+        <tr><td>観光地向けMAP</td><td>/tourism/</td></tr>
+        <tr><td>商業施設向けMAP</td><td>/commercial/</td></tr>
+        <tr><td>ホテル向けMAP</td><td>/hotel/</td></tr>
+        <tr><td>公園・パーク向けMAP</td><td>/park/</td></tr>
+        <tr><td>…他業種を追加</td><td>/xxx/</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="tag red">CLOSED・業務向け</span>
+      <h3>MapPenguin DX（旧Pro）　maps.smartpr.jp/dx/</h3>
+      <p>ログイン必須・社内/グループ向けの管理コンソール。「Pro」という名称を「DX」に改称し、本体プラン名の「Pro」との重複を解消する案をベースに進める。</p>
+      <table class="datatable" style="margin-top:14px;">
+        <tr><th>業種別LP</th><th>パス（現状 /pro/ → 変更後案 /dx/）</th></tr>
+        <tr><td>製造・プラント向けMAP</td><td>/dx/factory/</td></tr>
+        <tr><td>倉庫・物流向けMAP</td><td>/dx/warehouse/</td></tr>
+        <tr><td>インフラ保全向けMAP</td><td>/dx/infra/</td></tr>
+        <tr><td>…他業種を追加</td><td>/dx/xxx/</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:20px;">
+    契約単位は製品ごとに独立（併用時は2契約・2管理画面）。OPENとDXの間は相互リンク（クロスセル導線）でつなぎ、各業種別LPはそれぞれのプラットフォームLPの配下に展開する構成とする。
+  </div>
+
+  <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">機能切り分けの要点（機能整理シートより抜粋）</h3>
+  <table class="datatable">
+    <tr><th>機能・項目</th><th>MapPenguin</th><th>MapPenguin DX（旧Pro）</th><th>備考</th></tr>
+    <tr><td>契約単位</td><td>製品ごと独立</td><td>製品ごと独立</td><td>併用時は2契約・2管理画面</td></tr>
+    <tr><td>スポット検索／経路案内／音声ガイド</td><td>○／△（OP）</td><td>ー</td><td>両者ともオプション扱いの項目あり</td></tr>
+    <tr><td>混雑情報</td><td>○</td><td class="hl">要検討</td><td>DX側の要否は未定</td></tr>
+    <tr><td>目的別誘導型・目的別経路案内</td><td>○予定</td><td class="hl">要検討</td><td>OPEN＝観光ナビ／DX＝現場ナレッジ・点検手順・緊急車両・権限別</td></tr>
+    <tr><td>多言語対応（11ヵ国語）</td><td>○</td><td class="hl">？（未定）</td><td></td></tr>
+    <tr><td>スタンプラリー／クーポン連携</td><td>△（集客向け・OPEN専用）</td><td>ー</td><td>初期18万円＋月3万円／初期10万円＋月3万円</td></tr>
+    <tr><td>デジタルマップ作成／フロアマップ／スポット登録</td><td>○</td><td>○</td><td>同一地図エンジンが土台。DXは工場・施設の案内向けが中心</td></tr>
+    <tr><td>イラストマップ</td><td>○</td><td>△</td><td>DXは用途外あり（※要整理）</td></tr>
+    <tr><td>ジオフェンス／ヒートマップ分析／データ分析</td><td>△／△／○</td><td>○／○／○</td><td>DXは分析系が標準対応</td></tr>
+    <tr><td>SSO・2要素認証・IP制限・監査ログ</td><td>ー</td><td>○</td><td>線引き案：これらはDXへ寄せる（SSOは初期＋月額オプション）</td></tr>
+    <tr><td>権限別マップ（閲覧権限で出し分け）</td><td>ー</td><td class="hl">△（中核機能想定）</td><td>DXの中核機能となる想定（※未確定）</td></tr>
+    <tr><td>基幹システムAPI連携／IoT・SORACOM連携</td><td>△</td><td>○</td><td></td></tr>
+    <tr><td>申請ワークフロー（申請者／承認者）</td><td>ー</td><td>○</td><td>申請者ID無制限／承認者ID〜10標準</td></tr>
+  </table>
+</section>
+
+<!-- 契約・料金案 -->
+<section id="pricing" class="alt">
+  <div class="inner">
+    <span class="eyebrow">Pricing Proposal</span>
+    <h2 class="sec-title">契約・料金案（DX＝旧Pro）</h2>
+    <div class="gradbar"></div>
+    <p class="sec-desc">社内検討用スプレッドシート「Proの価格案」シートの内容。ベーシックプラン想定。</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>初期費用</h3>
+        <table class="datatable">
+          <tr><th>項目</th><th>ベーシック</th></tr>
+          <tr><td>導入費（アカウント発行・プロジェクト作成・キックオフ・本稼働）</td><td>300,000円　※現地訪問要の場合＋10万円＋交通費</td></tr>
+          <tr><td>設定代行（イラスト無し／スポット登録・経路設定サポート等）</td><td>200,000円</td></tr>
+          <tr><td>イラスト作成（既存図面の簡易トレース）</td><td>150,000円／MAP</td></tr>
+          <tr><td>イラスト作成（新規）</td><td>300,000円〜／MAP</td></tr>
+          <tr><td>経路設定</td><td>100,000円〜</td></tr>
+          <tr><td>SSO（Azure AD等）連携</td><td>300,000円</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>SaaS利用料・オプション（月額）</h3>
+        <table class="datatable">
+          <tr><th>項目</th><th>ベーシック</th></tr>
+          <tr><td>月額基本料金（メールサポート込み）</td><td>50,000円</td></tr>
+          <tr><td>IP制限</td><td>5,000円／月</td></tr>
+          <tr><td>承認ワークフロー</td><td>10,000円／月</td></tr>
+          <tr><td>監査ログ・証跡保全</td><td>15,000円／月</td></tr>
+          <tr><td>SSO（Azure AD等）連携</td><td>15,000円／月</td></tr>
+          <tr><td>現地訪問</td><td>1回：100,000円＋交通費</td></tr>
+          <tr><td>サポート（電話・メール・オンラインMTG）</td><td>10,000円／月</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">従量課金</h3>
+    <table class="datatable">
+      <tr><th>項目</th><th>標準枠</th><th>超過分</th></tr>
+      <tr><td>承認者ID</td><td>〜10アカウントまで標準</td><td>5,000円／ID</td></tr>
+      <tr><td>ストレージ容量</td><td>〜10GBまで標準</td><td>5,000円／10GB</td></tr>
+      <tr><td>スポットピン</td><td>〜300スポットまで標準</td><td>10,000円／300スポット</td></tr>
+    </table>
+
+    <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">基本機能（無制限・標準搭載）</h3>
+    <table class="datatable">
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>CSV／PDFのデータ出力</td><td>無制限</td></tr>
+      <tr><td>申請者ID</td><td>無制限</td></tr>
+      <tr><td>2要素認証（2FA）</td><td>標準搭載</td></tr>
+    </table>
+
+    <div class="note-box" style="margin-top:20px;">
+      2ヶ月無料キャンペーンの案内可否は営業の裁量で調整可とする。代理店を挟む場合、上記金額に対して〜20%まで値引きして卸価格とする想定。
+    </div>
+  </div>
+</section>
+
 <!-- 検討の結論 -->
 <section id="conclusion" class="alt">
   <div class="inner">
@@ -263,10 +387,11 @@
         </p>
       </div>
       <div class="card">
-        <h3>ネーミングについて</h3>
+        <h3>ネーミングについて（方向性決定）</h3>
         <p>
           「Pro」は本体プラン名（Standard/Pro/Pro plus/Enterprise）としてすでに専有されているため、工場向けクローズド版の名称として重ねて使うのは避けたい。
-          WWS公式note記事で「工場DX：デジタルフロアマップで安全・効率・衛生を劇的に改善」という表現が既に使われており、「MapPenguin DX」は工場・現場向けバーティカルの名称として、社内のマーケティング言語とも整合する。
+          WWS公式note記事で「工場DX：デジタルフロアマップで安全・効率・衛生を劇的に改善」という表現が既に使われており、社内検討シートでも「Pro」を「DX」に改称する案がベースとして固まった。
+          今後は「MapPenguin DX（旧Pro）」を業務向けクローズド製品のブランド名とし、その配下（/dx/配下）に工場・倉庫物流・インフラ保全などの業種別バーティカルLPを展開する方針で進める。
         </p>
       </div>
     </div>
@@ -278,7 +403,7 @@
   <span class="eyebrow">Next Actions</span>
   <h2 class="sec-title">次のアクション（提案）</h2>
   <div class="gradbar"></div>
-  <div class="step-row"><span class="step-num">1</span><div class="txt"><h4>「Pro」の意味の重複を解消する名称整理</h4><p>本体プラン名の「Pro」と、工場・現場向けクローズド製品の名称を分離する（例：工場向けは MapPenguin DX 等の別名に）。</p></div></div>
+  <div class="step-row"><span class="step-num">1</span><div class="txt"><h4>「Pro」→「DX」への改称、および業種別バーティカルLPの整備</h4><p>方向性は決定。/pro/ を /dx/ に統合・改称し、その配下に /dx/factory/ ／ /dx/warehouse/ ／ /dx/infra/ など業種別ソリューションLPを展開する。既存 /pro/factory の内容は /dx/factory へ移行する。</p></div></div>
   <div class="step-row"><span class="step-num">2</span><div class="txt"><h4>/pro/ と /pro/factory の料金表記を統一</h4><p>/pro/ LPの「月額8,000円〜」表記が本体と同一のままになっている点を確認し、正しい価格に修正する。</p></div></div>
   <div class="step-row"><span class="step-num">3</span><div class="txt"><h4>スマホ対応表記の訂正、または対応範囲の再検討</h4><p>LP・資料上の「スマホ対応」表現を実仕様（タブレット以上）に合わせて修正するか、スマホ対応自体を開発ロードマップに乗せるかを判断する。</p></div></div>
   <div class="step-row"><span class="step-num">4</span><div class="txt"><h4>管理画面の一本化</h4><p>Pro管理画面からMapPenguin管理画面へのリンクを廃止し、スポット登録・経路設定を含む全データ管理機能をPro側の管理コンソールに統合する。</p></div></div>
