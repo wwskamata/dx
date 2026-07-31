@@ -282,21 +282,49 @@
   </div>
 
   <h3 style="margin:30px 0 4px;font-size:15.5px;color:var(--navy);">機能切り分けの要点（機能整理シートより抜粋）</h3>
+  <p class="sec-desc">「ユーザー画面（一般公開の来場者が触る部分）」「管理画面（ログインして使う運用・管理側）」「他（契約・販促まわり）」の3つに区切って整理する。</p>
+
+  <span class="tag" style="margin-top:18px;">ユーザー画面（一般公開）</span>
+  <table class="datatable">
+    <tr><th>機能・項目</th><th>MapPenguin</th><th>MapPenguin DX（旧Pro）</th><th>備考</th></tr>
+    <tr><td>スポット検索</td><td>○</td><td>ー</td><td></td></tr>
+    <tr><td>経路案内</td><td>△</td><td>ー</td><td>両者ともオプション扱い</td></tr>
+    <tr><td>混雑情報</td><td>○</td><td class="hl">要検討</td><td>DX側の要否は未定</td></tr>
+    <tr><td>音声ガイド</td><td>○</td><td>ー</td><td></td></tr>
+    <tr><td>モデルコース</td><td>△</td><td>ー</td><td>OPENはオプション</td></tr>
+    <tr><td>目的別誘導型</td><td>○予定</td><td class="hl">要検討</td><td>OPEN＝観光ナビ／DX＝現場ナレッジ・点検手順</td></tr>
+    <tr><td>目的別経路案内</td><td>○予定</td><td class="hl">要検討</td><td>OPEN＝避難・日祝・子供等／DX＝緊急車両・権限別</td></tr>
+    <tr><td>多言語対応（11ヵ国語）</td><td>○</td><td class="hl">？（未定）</td><td></td></tr>
+  </table>
+
+  <span class="tag" style="margin-top:26px;">管理画面（ログイン・運用側）</span>
+  <table class="datatable">
+    <tr><th>機能・項目</th><th>MapPenguin</th><th>MapPenguin DX（旧Pro）</th><th>備考</th></tr>
+    <tr><td>デジタルマップ作成</td><td>○</td><td>○</td><td>同一地図エンジンが土台</td></tr>
+    <tr><td>フロアマップ（屋内・敷地内）</td><td>○</td><td>○</td><td>DXは工場・施設の案内向けが中心</td></tr>
+    <tr><td>イラストマップ</td><td>○</td><td>△</td><td>DXは用途外あり（※要整理）</td></tr>
+    <tr><td>スポット登録・写真ギャラリー</td><td>○</td><td>○</td><td></td></tr>
+    <tr><td>多言語対応（日英2ヵ国語）</td><td>○</td><td>○</td><td></td></tr>
+    <tr><td>ジオフェンス</td><td>△</td><td>○</td><td></td></tr>
+    <tr><td>ヒートマップ分析</td><td>△</td><td>○</td><td></td></tr>
+    <tr><td>データ分析（Looker Studio）</td><td>○</td><td>○</td><td></td></tr>
+    <tr><td>限定公開（URL限定）・簡易ログイン</td><td>○</td><td>○</td><td></td></tr>
+    <tr><td>SSO（Azure AD等）連携</td><td>ー</td><td>○</td><td>線引き案：SSOはDXへ寄せる（初期＋月額オプション）</td></tr>
+    <tr><td>2要素認証（2FA）</td><td>ー</td><td>○</td><td>DXは標準（価格案より）</td></tr>
+    <tr><td>IP制限</td><td>ー</td><td>△</td><td>DXのオプション</td></tr>
+    <tr><td>権限別マップ（閲覧権限で出し分け）</td><td>ー</td><td class="hl">△（中核機能想定）</td><td>DXの中核機能となる想定（※未確定）</td></tr>
+    <tr><td>監査ログ・証跡保全</td><td>ー</td><td>○</td><td>DXのオプション</td></tr>
+    <tr><td>基幹システムAPI連携</td><td>△</td><td>○</td><td></td></tr>
+    <tr><td>IoT／SORACOM連携（位置・資産）</td><td>△</td><td>○</td><td></td></tr>
+    <tr><td>申請ワークフロー（申請者／承認者）</td><td>ー</td><td>○</td><td>申請者ID無制限／承認者ID〜10標準</td></tr>
+  </table>
+
+  <span class="tag" style="margin-top:26px;">他（契約・販促連携）</span>
   <table class="datatable">
     <tr><th>機能・項目</th><th>MapPenguin</th><th>MapPenguin DX（旧Pro）</th><th>備考</th></tr>
     <tr><td>契約単位</td><td>製品ごと独立</td><td>製品ごと独立</td><td>併用時は2契約・2管理画面</td></tr>
-    <tr><td>スポット検索／経路案内／音声ガイド</td><td>○／△（OP）</td><td>ー</td><td>両者ともオプション扱いの項目あり</td></tr>
-    <tr><td>混雑情報</td><td>○</td><td class="hl">要検討</td><td>DX側の要否は未定</td></tr>
-    <tr><td>目的別誘導型・目的別経路案内</td><td>○予定</td><td class="hl">要検討</td><td>OPEN＝観光ナビ／DX＝現場ナレッジ・点検手順・緊急車両・権限別</td></tr>
-    <tr><td>多言語対応（11ヵ国語）</td><td>○</td><td class="hl">？（未定）</td><td></td></tr>
-    <tr><td>スタンプラリー／クーポン連携</td><td>△（集客向け・OPEN専用）</td><td>ー</td><td>初期18万円＋月3万円／初期10万円＋月3万円</td></tr>
-    <tr><td>デジタルマップ作成／フロアマップ／スポット登録</td><td>○</td><td>○</td><td>同一地図エンジンが土台。DXは工場・施設の案内向けが中心</td></tr>
-    <tr><td>イラストマップ</td><td>○</td><td>△</td><td>DXは用途外あり（※要整理）</td></tr>
-    <tr><td>ジオフェンス／ヒートマップ分析／データ分析</td><td>△／△／○</td><td>○／○／○</td><td>DXは分析系が標準対応</td></tr>
-    <tr><td>SSO・2要素認証・IP制限・監査ログ</td><td>ー</td><td>○</td><td>線引き案：これらはDXへ寄せる（SSOは初期＋月額オプション）</td></tr>
-    <tr><td>権限別マップ（閲覧権限で出し分け）</td><td>ー</td><td class="hl">△（中核機能想定）</td><td>DXの中核機能となる想定（※未確定）</td></tr>
-    <tr><td>基幹システムAPI連携／IoT・SORACOM連携</td><td>△</td><td>○</td><td></td></tr>
-    <tr><td>申請ワークフロー（申請者／承認者）</td><td>ー</td><td>○</td><td>申請者ID無制限／承認者ID〜10標準</td></tr>
+    <tr><td>スタンプラリー連携</td><td>△（集客向け・OPEN専用）</td><td>ー</td><td>初期18万円＋月3万円</td></tr>
+    <tr><td>クーポン連携</td><td>△（集客向け・OPEN専用）</td><td>ー</td><td>初期10万円＋月3万円</td></tr>
   </table>
 </section>
 
