@@ -445,21 +445,31 @@
     <div class="gradbar"></div>
     <div class="price-box">
       <div>
-        <div class="amount">初期 100,000円<span>＋月額 38,000円〜（税抜）</span></div>
-        <div class="note">工場の案内に使う「フロアマップ」の料金表（2025.06版）に基づく金額です。初期費用はプラン共通、月額はスポット登録数に応じた4プランから選べます。</div>
+        <div class="amount">初期 300,000円〜500,000円<span>＋月額 50,000円〜（税抜）</span></div>
+        <div class="note">MapPenguin Pro Ver1.0.0の価格（2026.08版）に基づく金額です。導入費（アカウント発行・プロジェクト伴走・キックオフMTG・本稼働）を含む初期費用と、SaaS利用料の月額基本料金です。</div>
       </div>
-      <div class="note" style="max-width:260px;">API利用料はベースマップの種類により無料または従量課金（オープンストリートマップ利用時は無料、ゼンリンマップ利用時は従量課金対象）です。</div>
+      <div class="note" style="max-width:260px;">ID数・スポットピン数・SSO連携・IP制限などは利用量に応じて別途費用が発生します（詳細は下表）。</div>
     </div>
 
     <table class="price-table" style="margin-top:22px;">
-      <tr><th>プラン</th><th>月額費用（税抜）</th><th>スポット上限</th><th>階層追加／イラスト差替</th></tr>
-      <tr><td>Standard</td><td>38,000円</td><td>50件</td><td>無料</td></tr>
-      <tr><td>Pro</td><td>48,000円</td><td>150件</td><td>無料</td></tr>
-      <tr><td>Pro plus</td><td>68,000円</td><td>500件</td><td>無料</td></tr>
-      <tr><td>Enterprise</td><td>78,000円〜</td><td>1,000件〜</td><td>無料</td></tr>
+      <tr><th>初期費用（A）</th><th>費用目安</th></tr>
+      <tr><td>導入費：アカウント発行／プロジェクト伴走／キックオフMTG／本稼働</td><td>300,000〜500,000円　※現地訪問要の場合：+10万円〜＋交通/宿泊費</td></tr>
+      <tr><td>設定代行（イラスト無し）</td><td>20万円</td></tr>
+      <tr><td>イラスト作成：既存図面の簡易トレース</td><td>15万円〜／MAP</td></tr>
+      <tr><td>イラスト作成：新規作成</td><td>30万円〜／MAP</td></tr>
+      <tr><td>道路セグメント登録</td><td>10万円〜</td></tr>
+      <tr><td>SSO（Azure AD等）連携</td><td>300,000円</td></tr>
+    </table>
+    <table class="price-table" style="margin-top:14px;">
+      <tr><th>月額費用（B・SaaS利用料）</th><th>費用目安</th></tr>
+      <tr><td>月額基本料金</td><td>50,000円〜　※メールサポートを含む</td></tr>
+      <tr><td>管理画面ログインID</td><td>〜10アカウントまで標準　以降5,000円／＋ID</td></tr>
+      <tr><td>スポットピン</td><td>〜300スポットまで標準　以降10,000円／300スポット</td></tr>
+      <tr><td>SSO（Azure AD等）連携</td><td>15,000円／月</td></tr>
+      <tr><td>IP制限（管理画面）</td><td>5,000円／月</td></tr>
     </table>
     <div class="note-box" style="margin-top:14px;">
-      ※初期費用100,000円（税抜）は全プラン共通で、階層切替・フロアマップ追加登録・施設切替機能を含みます。デジタルマップ／フロアマップ／パークマップはそれぞれ別料金体系のため、複数の種類を組み合わせる場合は初期費用も種類ごとに発生します。全プラン共通で利用ユーザー数無制限・多言語11カ国・管理画面日英対応・データ分析（Looker Studio）・専任担当者サポートが標準搭載です。
+      ※申請者ID・CSV/PDFデータ出力は無制限、2FAは標準搭載です。ストレージは〜10GBまで標準（以降5,000円／10GB）、承認ワークフロー拡張10,000円／月、監査ログ・証跡保全拡張15,000円／月です。オプションとして現地訪問（1回、+10万円（人）〜＋交通/宿泊費）、定例MTG（オンライン・30,000円／月1回）をご用意しています。上記は税抜・2026.08時点の目安です。
     </div>
 
     <ul class="benefit-list" style="margin-top:22px;">
@@ -488,9 +498,11 @@
     <div class="grid g2" style="margin-top:26px;">
       <div class="card"><h3>初回ヒアリングの確認事項</h3><p>①先行して可視化したい対象エリア（例：第一プラントのみ等）　②現状の図面データの有無・形式（CAD／PDF等）　③想定ユーザー規模（自社・協力会社の合計アカウント数）　④お試し導入（スモールスタート）のご要望</p></div>
       <div class="card"><h3>別途お見積りとなる項目</h3><ul style="font-size:13px;padding-left:18px;margin:8px 0 0;">
-        <li><b>クリエイティブ代行</b>：イラストマップ（フロアマップ）画像作成代行　5万円〜／枚</li>
-        <li><b>設定代行</b>：スポット登録代行、経路設定代行</li>
-        <li><b>各種オプション</b>：機能追加・IoT各種トラッキング機器の導入費用等、内容に応じて個別にお見積りします。</li>
+        <li><b>設定代行</b>：イラスト無し（スポット登録・通行止め設定サポート等）　20万円</li>
+        <li><b>イラスト作成</b>：既存図面の簡易トレース15万円〜／MAP、新規作成30万円〜／MAP</li>
+        <li><b>道路セグメント登録</b>：10万円〜</li>
+        <li><b>SSO（Azure AD等）連携</b>：初期300,000円／月額15,000円</li>
+        <li><b>各種オプション</b>：現地訪問、定例MTG、ストレージ・承認ワークフロー・監査ログの拡張等、内容に応じて個別にお見積りします。</li>
       </ul></div>
     </div>
 
@@ -527,7 +539,7 @@
   <div class="price-box" style="margin-top:26px;">
     <div>
       <div class="amount">オープン価格<span> ＝ WWS希望小売価格</span></div>
-      <div class="note">初期費用・月額費用ともに、MapPenguin Pro公式の希望小売価格を基準とします（フロアマップの場合、初期100,000円・月額38,000円〜が目安。詳細は上記「費用効果」のプラン表をご参照ください）。エンドクライアント様への提示価格の目安としてご利用ください。</div>
+      <div class="note">初期費用・月額費用ともに、MapPenguin Pro公式の希望小売価格を基準とします（初期300,000円〜500,000円・月額50,000円〜が目安。詳細は上記「費用効果」の価格表をご参照ください）。エンドクライアント様への提示価格の目安としてご利用ください。</div>
     </div>
   </div>
 
@@ -568,20 +580,22 @@
       <th colspan="2">①卸値割引方式</th><th rowspan="2">貴社粗利の例<br>（売価−WWS卸値）</th><th rowspan="2">②キックバック<br>方式</th>
     </tr>
     <tr><th>WWS卸値<br>（貴社仕入額）</th><th>売価<br>（貴社設定・請求額）</th></tr>
-    <tr><td rowspan="6">A 初期費用</td><td>① SaaS費用</td><td>100,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：Standardプラン<br>70,000円〜80,000円）</td><td class="free-mark">オープン価格通り<br>例：100,000円</td><td>20,000円<br>〜30,000円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
-    <tr><td>② ディレクション費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
-    <tr><td>③ カスタマイズ費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
-    <tr><td>④ クリエイティブ代行</td><td>イラストマップ（フロアマップ）<br>画像作成代行　5万円〜／枚</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
-    <tr><td>⑤ 設定代行</td><td>スポット登録代行／経路設定代行</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
-    <tr><td>⑥ 各種オプション</td><td>機能追加・IoTトラッキング機器<br>導入費用等</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
-    <tr><td rowspan="3">B 月額費用</td><td>① SaaSプラン月額</td><td>38,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：Standardプラン<br>26,600円〜30,400円）</td><td class="free-mark">オープン価格通り<br>例：38,000円</td><td>7,600円<br>〜11,400円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
-    <tr><td>② SaaSオプション月額</td><td>フロア内最短・最適経路案内（月額20,000円〜）／災害時避難動線連携／Google機械翻訳連携／定点監視カメラ連携／IoT各種センサー表示／重要資産・車両トラッキング連携</td><td class="yes-mark">20〜30%OFF<br>で卸</td><td class="free-mark">オープン価格通り<br>※料金表に準拠</td><td>－</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
-    <tr><td>③ 運用代行・サポート支援費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td rowspan="6">A 初期費用</td><td>① 導入費（アカウント発行等）</td><td>300,000〜500,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：300,000円の場合<br>210,000円〜240,000円）</td><td class="free-mark">オープン価格通り<br>例：300,000円</td><td>60,000円<br>〜90,000円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>② 設定代行（イラスト無し）</td><td>20万円</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td>③ イラスト作成</td><td>簡易トレース15万円〜／新規30万円〜（／MAP）</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td>④ 道路セグメント登録</td><td>10万円〜</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td>⑤ SSO（Azure AD等）連携（初期）</td><td>300,000円</td><td class="yes-mark">20〜30%OFFで卸<br>（例：210,000円〜240,000円）</td><td class="free-mark">オープン価格通り<br>例：300,000円</td><td>60,000円<br>〜90,000円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>⑥ ディレクション・カスタマイズ費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
+    <tr><td rowspan="5">B 月額費用</td><td>① 月額基本料金（SaaS利用料）</td><td>50,000円〜</td><td class="yes-mark">20〜30%OFFで卸<br>（例：50,000円の場合<br>35,000円〜40,000円）</td><td class="free-mark">オープン価格通り<br>例：50,000円</td><td>10,000円<br>〜15,000円</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>② 管理画面ログインID追加</td><td>5,000円／＋ID（〜10ID標準）</td><td class="yes-mark">20〜30%OFF<br>で卸</td><td class="free-mark">オープン価格通り<br>※料金表に準拠</td><td>－</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>③ スポットピン追加</td><td>10,000円／300スポット（〜300標準）</td><td class="yes-mark">20〜30%OFF<br>で卸</td><td class="free-mark">オープン価格通り<br>※料金表に準拠</td><td>－</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>④ SSO・IP制限・基本機能拡張月額</td><td>SSO 15,000円／IP制限 5,000円／ストレージ・承認ワークフロー・監査ログ各5,000〜15,000円</td><td class="yes-mark">20〜30%OFF<br>で卸</td><td class="free-mark">オープン価格通り<br>※料金表に準拠</td><td>－</td><td class="mark-cell yes-mark">○<br>対象</td></tr>
+    <tr><td>⑤ 運用代行・サポート支援費用</td><td>－</td><td class="free-mark">実費見積</td><td class="free-mark">貴社にて自由設定</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
     <tr><td>C 従量課金</td><td>値引き対象外</td><td>－</td><td class="no-mark">実費据え置き<br>（WWS卸値＝実費）</td><td class="free-mark">実費のまま<br>（基本は小売価格）</td><td>－</td><td class="mark-cell no-mark">×<br>対象外</td></tr>
   </table>
 
   <div class="note-box">
-    ※「オープン価格」はWWS希望小売価格、「WWS卸値」は貴社がWWSへ支払う仕入額、「売価」は貴社がエンドクライアント様へ請求する金額です。SaaS標準プラン（A①初期・B①月額）とSaaSオプション（B②）は、売価をオープン価格（サービス価格）通りに設定いただく前提とし、貴社の粗利はWWS卸値との差額（20〜30%相当）から生まれます（表中の粗利額はStandardプランを例にした目安であり、保証値ではありません）。売価をオープン価格より高く設定することも貴社の判断で可能です。ディレクション・カスタマイズ・クリエイティブ代行・設定代行・運用代行/サポート費用は卸値の概念がなく、個別の実費お見積りとなり、貴社にて自由に価格設定いただけます。キックバック方式では「A① SaaS費用（初期）」「B① SaaSプラン月額」「B② SaaSオプション月額」の3項目のみが対象です。従量課金は両方式共通で値引き対象外・実費据え置き（WWS卸値＝実費）です。掛け率・対象範囲・お支払い時期などの詳細は、正式なパートナー契約の締結時に個別にすり合わせます。
+    ※「オープン価格」はWWS希望小売価格、「WWS卸値」は貴社がWWSへ支払う仕入額、「売価」は貴社がエンドクライアント様へ請求する金額です。SaaS標準料金（A①・⑤初期、B①月額）とSaaSオプション（B②〜④）は、売価をオープン価格（サービス価格）通りに設定いただく前提とし、貴社の粗利はWWS卸値との差額（20〜30%相当）から生まれます（表中の粗利額は代表例の目安であり、保証値ではありません）。売価をオープン価格より高く設定することも貴社の判断で可能です。設定代行・イラスト作成・道路セグメント登録・ディレクション・カスタマイズ・運用代行/サポート費用は卸値の概念がなく、個別の実費お見積りとなり、貴社にて自由に価格設定いただけます。キックバック方式では「A①・⑤ 初期費用」「B①〜④ 月額費用」のSaaS関連項目のみが対象です。従量課金は両方式共通で値引き対象外・実費据え置き（WWS卸値＝実費）です。掛け率・対象範囲・お支払い時期などの詳細は、正式なパートナー契約の締結時に個別にすり合わせます。
   </div>
 </section>
 
